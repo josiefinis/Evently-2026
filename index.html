@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- TODO: Can we put SVGs in separate files or something? -->
     <!-- SVGs -->
 
     <!-- logo icon -->
@@ -94,114 +95,181 @@
         </path>
     </svg>
 
-    <!-- Header -->
+    <!-- Page Header -->
     <header class="header">
         Evently
 
-        Hem
-        Evenemang
-        Kategorier
-        Om oss
-        Kontakt
-
-        Skapa konto
+        <nav>
+            <ul>
+                <li><a href="#">Hem</a></li>
+                <li><a href="#">Evenemang</a></li>
+                <li><a href="#">Kategorier<a></li>
+                <li><a href="#">Om oss</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+        <!-- SEARCH -->
+        <button type="button">Logga in</button>
     </header>
 
 
     <!-- Main content -->
     <main>
-        Upptäck. Upplev. Minns.
+        <!-- Main Header: Hero -->
+        <header> 
+            <span>Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
 
-        Hitta lokala evenemang du kommer älska
+            <h1>Hitta lokala evenemang du kommer älska</h1>
 
-        Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.
+            <p>Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
+            <button type="button">Utforska evenemang</button>
+            <button type="button">Se helgens tips</button>
+        </header>
 
-        Utforska evenemang
-        Se helgens tips
+        <!-- Main Section: Search -->
+        <section>
+            <header>
+                <h2>Hitta rätt evenemang</h2>
+            </header>
 
-        Hitta rätt evenemang
+            <form class="form" action="#" method="post" autocomplete="on" name="search-event">
 
-        Sökord
-        Kategori
-        Alla kategorier
-        Konsert
-        Marknad
-        Workshop
-        Familj
-        Sport / Hälsa
-        Datum
-        Sök evenemang
+                <div class="form__input-group">
+                    <label for="search-string">Sökord</label>
+                    <input type="text" id="search-string" name="search-string">
+                </div>
 
-        Populära evenemang
-        Se alla evenemang
+                <div class="form__input-group">
+                    <label for="event-category">Kategori</label>
+                    <select id="event-category" name="event-category">
+                        <option value="konsert">Alla kategorier</option>
+                        <option value="marknad">Marknad</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="familj">Familj</option>
+                        <option value="sport_hälsa">Sport</option>
+                    </select>
+                </div>
 
-        Indie Night med Nova Sun
-        Konsert
-        24 maj
-        Pustervik, Göteborg
+                <div class="form__input-group">
+                    <label for="event-date">Datum</label>
+                    <input type="date" id="event-date" name="event-date">
+                </div>
 
-        Vårmarknad i Slottsskogen
-        Marknad
-        25 maj
-        Slottsskogen, Göteborg
+                <button type="submit">
+                    Sök evenemang
+                </button>
+            </form>
+        </section>
 
-        Keramikkurs för nybörjare
-        Workshop
-        27 maj
-        Studio Lera, Göteborg
+        <!-- Main Section: Popular events -->
+        <section>
+            <header>
+                <h2>Populära evenemang</h2>
+                <a href="#">Se alla evenemang</a>
+            </header>
 
-        Barnteater: Den lilla sjöjungfrun
-        Familj
-        31 maj
-        Folkteatern, Göteborg
+            <article>
+                <h3>Indie Night med Nova Sun</h3>
+                <!-- TAG -->Konsert<!-- /TAG -->
+                <time datetime="2026-05-24">24 maj</time> 
+                <!-- PLACE -->Pustervik, Göteborg<!-- /PLACE -->
+            </article>
 
-        Morgonlöpning & frukost
-        Sport
-        1 juni
-        Slottsskogen, Göteborg
+            <article>
+                <h3>Vårmarknad i Slottsskogen</h3>
+                <!-- TAG -->Marknad<!-- /TAG -->
+                <time datetime="2026-05-25">25 maj</time> 
+                <!-- PLACE -->Slottsskogen, Göteborg<!-- /PLACE -->
+            </article>
+
+            <article>
+                <h3>Keramikkurs för nybörjare</h3>
+                <!-- TAG -->Workshop<!-- /TAG -->
+                <time datetime="2026-05-27">27 maj</time> 
+                <!-- PLACE -->Studio Lera, Göteborg<!-- /PLACE -->
+            </article>
+
+            <article>
+                <h3>Barnteater: Den lilla sjöjungfrun</h3>
+                <!-- TAG -->Familj<!-- /TAG -->
+                <time datetime="2026-05-31">31 maj</time> 
+                <!-- PLACE -->Folkteatern, Göteborg<!-- /PLACE -->
+            </article>
+
+            <article>
+                <h3>Morgonlöpning & frukost</h3>
+                <!-- TAG -->Sport<!-- /TAG -->
+                <time datetime="2026-06-01">1 juni</time> 
+                <!-- PLACE -->Slottsskogen, Göteborg<!-- /PLACE -->
+            </article>
+
+            <article>
+                <h3>Jazzkväll på Vasateatern</h3>
+                <!-- TAG -->Konsert<!-- /TAG -->
+                <time datetime="2026-05-24">3 juni</time> 
+                <!-- PLACE -->Vasateatern, Göteborg<!-- /PLACE -->
+            </article>
+            
+        </section>
+
+        <!-- Main Footer: merit badges -->
+        <!-- TODO: think a bit more about semanitcs. -->
+        <footer> 
+            <article>
+                <h2>Gratis & prisvärt</h2>
+                <p>Hitta massor av evenemang som är gratis eller snälla mot plånboken.</p>
+            </article>
 
 
-        Jazzkväll på Vasateatern
-        Konsert
-        3 juni
-        Vasateatern, Göteborg
+            <article>
+                <h2>För alla åldrar</h2>
+                <p>Aktiviteter för både stora och små - hitta något som passar hela familjen.</p>
+            </article>
 
-
-        Gratis & prisvärt
-        Hitta massor av evenemang som är gratis eller snälla mot plånboken.
-
-
-        För alla åldrar
-        Aktiviteter för både stora och små - hitta något som passar hela familjen.
-
-        Nära dig
-        Upptäck evenemang i ditt område och stöd lokala arrangörer.
+            <article>
+                <h2>Nära dig</h2>
+                <p>Upptäck evenemang i ditt område och stöd lokala arrangörer.</p>
+            </article>
+        </footer>
     </main>
 
-    <!-- Footer -->
+    <!-- Page Footer -->
     <footer>
-        Evently
-        Evently samlar lokala evenemang så att du enkelt kan upptäcka, planera och dela upplevelser som berikar din
+        <h2>Evently</h2>
+        <p>
+            Evently samlar lokala evenemang så att du enkelt kan upptäcka, planera och dela upplevelser som berikar din
         vardag.
+        </p>
 
+        <section>
+            <h3>Utforska</h3>
+            <ul>
+                <li><a>Alla evenemang</a></li>
+                <li><a>Kategorier</a></li>
+                <li><a>Helgens tips</a></li>
+                <li><a>Populära</a></li>
+            </ul>
+        </section>
 
-        Utforska
-        Alla evenemang
-        Kategorier
-        Helgens tips
-        Populära
+        <section>
+            <h3>Om Evently</h3>
+            <ul>
+                <li><a href="#">Om oss</a></li>
+                <li><a href="#">För arrangörer</a></li>
+                <li><a href="#">Vanliga frågor</a></li>
+                <li><a href="#">Nyheter</a></li>
+            </ul>
+        </section>
 
-        Om Evently
-        Om oss
-        För arrangörer
-        Vanliga frågor
-        Nyheter
-
-        Kontakt
-        info@evently.se
-        031-123 45 67
-        Stora Badhusgatan 18
-        411 21 Göteborg
+        <section>
+            <h3>Kontakt</h3>
+            <address>
+                <a href="#">info@evently.se</a> <!-- TODO: mailto -->
+                <a href="#">031-123 45 67</a> <!-- TODO: telephone? -->
+                Stora Badhusgatan 18
+                411 21 Göteborg
+            </address>
+        </section>
     </footer>
 
 </body>
