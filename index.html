@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evently - Hitta lokala evenemang du kommer älska</title>
     <!-- Google Fonts Preconnect and Links for Variable Fonts: Inter and Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=inter:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 </head>
-
+    <link rel="stylesheet" href="style.css">
 <body>
     <!-- TODO: Can we put SVGs in separate files or something? -->
 
@@ -91,7 +87,7 @@
 
             <figure class="hero__figure">
                 <img 
-                    class="card__img"
+                    class="hero__img"
                     alt="" 
                     loading="lazy"
                     src="https://picsum.photos/200"
@@ -100,7 +96,7 @@
                     height="200"
                 > 
                 <img 
-                    class="card__img"
+                    class="hero__img"
                     alt="" 
                     loading="lazy"
                     src="https://picsum.photos/200"
@@ -109,7 +105,7 @@
                     height="200"
                 > 
                 <img 
-                    class="card__img"
+                    class="hero__img"
                     alt="" 
                     loading="lazy"
                     src="https://picsum.photos/200"
@@ -124,7 +120,7 @@
         <!-- ==================== -->
         <section class="search-form" aria-labelledby="search">
             <header>
-                <h2 id="search">Hitta rätt evenemang</h2>
+                <h2 class="search-form__heading" id="search">Hitta rätt evenemang</h2>
             </header>
 
             <form class="form" action="#" method="post" autocomplete="on" name="search-event">
@@ -158,9 +154,9 @@
 
         <!-- Main Content - Section: Popular events -->
         <!-- ============================ -->
-        <section class="grid-content" aria-labelledby="section-1">
+        <section class="section |grid-content" aria-labelledby="section-1">
             <header>
-                <h2 id="section-1">Populära evenemang</h2>
+                <h2 class="section__heading" id="section-1">Populära evenemang</h2>
                 <a href="#">Se alla evenemang</a>
             </header>
 
@@ -174,7 +170,7 @@
                     width="200"
                     height="200"
                 > 
-                <h3 id="article-1">Indie Night med Nova Sun</h3>
+                <h3 class="card__heading" id="article-1">Indie Night med Nova Sun</h3>
                 <!-- Konsert -->
                 <time datetime="2026-05-24">24 maj</time> 
                 <p>Pustervik, Göteborg</p>
@@ -190,7 +186,7 @@
                     width="200"
                     height="200"
                 > 
-                <h3 id="article-2">Vårmarknad i Slottsskogen</h3>
+                <h3 class="card__heading" id="article-2">Vårmarknad i Slottsskogen</h3>
                 <!-- Marknad -->
                 <time datetime="2026-05-25">25 maj</time> 
                 <p>Slottsskogen, Göteborg</p>
@@ -206,7 +202,7 @@
                     width="200"
                     height="200"
                 > 
-                <h3 id="article-3">Keramikkurs för nybörjare</h3>
+                <h3 class="card__heading" id="article-3">Keramikkurs för nybörjare</h3>
                 <!-- Workshop -->
                 <time datetime="2026-05-27">27 maj</time> 
                 <p>Studio Lera, Göteborg</p>
@@ -222,7 +218,7 @@
                     width="200"
                     height="200"
                 > 
-                <h3 id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
+                <h3 class="card__heading" id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
                 <!-- Familj -->
                 <time datetime="2026-05-31">31 maj</time> 
                 <p>Folkteatern, Göteborg</p>
@@ -238,7 +234,7 @@
                     width="200"
                     height="200"
                 > 
-                <h3 id="article-5">Morgonlöpning & frukost</h3>
+                <h3 class="card__heading" id="article-5">Morgonlöpning & frukost</h3>
                 <!-- Sport -->
                 <time datetime="2026-06-01">1 juni</time> 
                 <p>Slottsskogen, Göteborg</p>
@@ -254,7 +250,7 @@
                     width="200"
                     height="200"
                 > 
-                <h3 id="article-6">Jazzkväll på Vasateatern</h3>
+                <h3 class="card__heading" id="article-6">Jazzkväll på Vasateatern</h3>
                 <!-- Konsert -->
                 <time datetime="2026-05-24">3 juni</time> 
                 <p>Vasateatern, Göteborg</p>

@@ -1,7 +1,14 @@
 :root {
     /* Fonts */
-    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
+    --font-inter: 'Inter', serif, system-ui, -apple-system, sans-serif;
+    --font-poppins: 'Poppins', serif, system-ui, -apple-system, sans-serif;
+
+    --font-size-xxl: 3rem;
+    --font-size-xl: 2rem;
+    --font-size-l: 1.5rem;
+    --font-size-m: 1rem;
+    --font-size-s: 0.8rem;
+
 
     /* Brand Colors */
     --purple-100: oklch(95.6% 0.028 282);
@@ -205,6 +212,26 @@ p {
 
 .banner__search {
     margin-inline-start: auto;
+}
+
+.hero__heading {
+    font-size: var(--font-size-xxl);
+    font-weight: 900;
+}
+
+.search-form__heading {
+    font-size: var(--font-size-l);
+    font-weight: 700;
+}
+
+.section__heading {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.card__heading {
+    font-size: var(--font-size-l);
+    font-weight: 700;
 }
 
 .search-form {
