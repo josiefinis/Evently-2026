@@ -30,7 +30,7 @@
 
     <!-- BANNER -->
     <!-- ====== -->
-    <header class="header">
+    <header class="banner | flex">
         <div class="logo">
             <!-- logo icon -->
             <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -53,17 +53,17 @@
 
         <!-- TODO: implement hamburger menu with <dialog> -->
         <nav>
-            <ul>
+            <ul class="flex">
                 <li><a href="#">Hem</a></li>
                 <li><a href="#">Evenemang</a></li>
-                <li><a href="#">Kategorier<a></li>
+                <li><a href="#">Kategorier</a></li>
                 <li><a href="#">Om oss</a></li>
                 <li><a href="#">Kontakt</a></li>
             </ul>
         </nav>
 
         <!-- SEARCH -->
-        <button type="button" aria-label="Sök">
+        <button class="banner__search" type="button" aria-label="Sök">
             <!-- spyglass icon -->
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -72,7 +72,7 @@
             </svg>
         </button>
 
-        <button type="button">Logga in</button>
+        <button class="banner__login" type="button">Logga in</button>
     </header>
 
 
@@ -80,19 +80,49 @@
     <!-- ============ -->
     <main id="main">
         <!-- Main Content - Header: Hero -->
-        <header aria-labelledby="main-heading"> 
-            <span>Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
+        <header class="hero" aria-labelledby="hero__heading"> 
+            <div>
+                <span>Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
+                <h1 class="hero__heading" id="hero__heading">Hitta lokala evenemang du kommer älska</h1>
+                <p class="hero__supporting-text">Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
+                <button type="button">Utforska evenemang</button>
+                <button type="button">Se helgens tips</button>
+            </div>
 
-            <h1 id="main-heading">Hitta lokala evenemang du kommer älska</h1>
-
-            <p>Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
-            <button type="button">Utforska evenemang</button>
-            <button type="button">Se helgens tips</button>
+            <figure class="hero__figure">
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
+            </figure>
         </header>
 
         <!-- Main Content - Section: Search -->
         <!-- ==================== -->
-        <section aria-labelledby="search">
+        <section class="search-form" aria-labelledby="search">
             <header>
                 <h2 id="search">Hitta rätt evenemang</h2>
             </header>
@@ -128,59 +158,113 @@
 
         <!-- Main Content - Section: Popular events -->
         <!-- ============================ -->
-        <section aria-labelledby="section-1">
+        <section class="grid-content" aria-labelledby="section-1">
             <header>
                 <h2 id="section-1">Populära evenemang</h2>
                 <a href="#">Se alla evenemang</a>
             </header>
 
-            <article aria-labelledby="article-1">
+            <article class="card" data-type="concert" aria-labelledby="article-1">
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
                 <h3 id="article-1">Indie Night med Nova Sun</h3>
-                <!-- TAG -->Konsert<!-- /TAG -->
+                <!-- Konsert -->
                 <time datetime="2026-05-24">24 maj</time> 
-                <!-- PLACE -->Pustervik, Göteborg<!-- /PLACE -->
+                <p>Pustervik, Göteborg</p>
             </article>
 
-            <article aria-labelledby="article-2">
+            <article class="card" data-type="market" aria-labelledby="article-2">
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
                 <h3 id="article-2">Vårmarknad i Slottsskogen</h3>
-                <!-- TAG -->Marknad<!-- /TAG -->
+                <!-- Marknad -->
                 <time datetime="2026-05-25">25 maj</time> 
-                <!-- PLACE -->Slottsskogen, Göteborg<!-- /PLACE -->
+                <p>Slottsskogen, Göteborg</p>
             </article>
 
-            <article aria-labelledby="article-3">
+            <article class="card" data-type="workshop" aria-labelledby="article-3">
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
                 <h3 id="article-3">Keramikkurs för nybörjare</h3>
-                <!-- TAG -->Workshop<!-- /TAG -->
+                <!-- Workshop -->
                 <time datetime="2026-05-27">27 maj</time> 
-                <!-- PLACE -->Studio Lera, Göteborg<!-- /PLACE -->
+                <p>Studio Lera, Göteborg</p>
             </article>
 
-            <article aria-labelledby="article-4">
+            <article class="card" data-type="family" aria-labelledby="article-4">
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
                 <h3 id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
-                <!-- TAG -->Familj<!-- /TAG -->
+                <!-- Familj -->
                 <time datetime="2026-05-31">31 maj</time> 
-                <!-- PLACE -->Folkteatern, Göteborg<!-- /PLACE -->
+                <p>Folkteatern, Göteborg</p>
             </article>
 
-            <article aria-labelledby="article-5">
+            <article class="card" data-type="sport" aria-labelledby="article-5">
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
                 <h3 id="article-5">Morgonlöpning & frukost</h3>
-                <!-- TAG -->Sport<!-- /TAG -->
+                <!-- Sport -->
                 <time datetime="2026-06-01">1 juni</time> 
-                <!-- PLACE -->Slottsskogen, Göteborg<!-- /PLACE -->
+                <p>Slottsskogen, Göteborg</p>
             </article>
 
-            <article aria-labelledby="article-6">
+            <article class="card" data-type="concert" aria-labelledby="article-6">
+                <img 
+                    class="card__img"
+                    alt="" 
+                    loading="lazy"
+                    src="https://picsum.photos/200"
+                    alt="picsum placeholder image"
+                    width="200"
+                    height="200"
+                > 
                 <h3 id="article-6">Jazzkväll på Vasateatern</h3>
-                <!-- TAG -->Konsert<!-- /TAG -->
+                <!-- Konsert -->
                 <time datetime="2026-05-24">3 juni</time> 
-                <!-- PLACE -->Vasateatern, Göteborg<!-- /PLACE -->
+                <p>Vasateatern, Göteborg</p>
             </article>
             
         </section>
 
         <!-- Main Content - Footer: merit badges -->
         <!-- ========================= -->
-        <footer> 
+        <footer class="main-content__footer | flex"> 
             <div>
                 <!-- TODO: arial-label for icon? -->
                 <!-- ticket icon -->
@@ -225,7 +309,7 @@
 
     <!-- PAGE FOOTER -->
     <!-- =========== -->
-    <footer>
+    <footer class="page-footer | flex">
         <section aria-label="Sociala medier">
             <h2 id="footer-section-1">Evently</h2>
             <p>
@@ -233,7 +317,7 @@
             </p>
 
             <!-- Socials -->
-            <ul>
+            <ul class="social-media | flex">
                 <li>
                     <a href="#" aria-label="instagram">
                         <!-- instagram icon -->
