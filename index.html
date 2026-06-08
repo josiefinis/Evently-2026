@@ -78,12 +78,12 @@
 
     <!-- MAIN CONTENT -->
     <!-- ============ -->
-    <main>
+    <main id="main">
         <!-- Main Content - Header: Hero -->
-        <header> 
+        <header aria-labelledby="main-heading"> 
             <span>Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
 
-            <h1>Hitta lokala evenemang du kommer älska</h1>
+            <h1 id="main-heading">Hitta lokala evenemang du kommer älska</h1>
 
             <p>Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
             <button type="button">Utforska evenemang</button>
@@ -92,9 +92,9 @@
 
         <!-- Main Content - Section: Search -->
         <!-- ==================== -->
-        <section>
+        <section aria-labelledby="search">
             <header>
-                <h2>Hitta rätt evenemang</h2>
+                <h2 id="search">Hitta rätt evenemang</h2>
             </header>
 
             <form class="form" action="#" method="post" autocomplete="on" name="search-event">
@@ -128,49 +128,49 @@
 
         <!-- Main Content - Section: Popular events -->
         <!-- ============================ -->
-        <section>
+        <section aria-labelledby="section-1">
             <header>
-                <h2>Populära evenemang</h2>
+                <h2 id="section-1">Populära evenemang</h2>
                 <a href="#">Se alla evenemang</a>
             </header>
 
-            <article>
-                <h3>Indie Night med Nova Sun</h3>
+            <article aria-labelledby="article-1">
+                <h3 id="article-1">Indie Night med Nova Sun</h3>
                 <!-- TAG -->Konsert<!-- /TAG -->
                 <time datetime="2026-05-24">24 maj</time> 
                 <!-- PLACE -->Pustervik, Göteborg<!-- /PLACE -->
             </article>
 
-            <article>
-                <h3>Vårmarknad i Slottsskogen</h3>
+            <article aria-labelledby="article-2">
+                <h3 id="article-2">Vårmarknad i Slottsskogen</h3>
                 <!-- TAG -->Marknad<!-- /TAG -->
                 <time datetime="2026-05-25">25 maj</time> 
                 <!-- PLACE -->Slottsskogen, Göteborg<!-- /PLACE -->
             </article>
 
-            <article>
-                <h3>Keramikkurs för nybörjare</h3>
+            <article aria-labelledby="article-3">
+                <h3 id="article-3">Keramikkurs för nybörjare</h3>
                 <!-- TAG -->Workshop<!-- /TAG -->
                 <time datetime="2026-05-27">27 maj</time> 
                 <!-- PLACE -->Studio Lera, Göteborg<!-- /PLACE -->
             </article>
 
-            <article>
-                <h3>Barnteater: Den lilla sjöjungfrun</h3>
+            <article aria-labelledby="article-4">
+                <h3 id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
                 <!-- TAG -->Familj<!-- /TAG -->
                 <time datetime="2026-05-31">31 maj</time> 
                 <!-- PLACE -->Folkteatern, Göteborg<!-- /PLACE -->
             </article>
 
-            <article>
-                <h3>Morgonlöpning & frukost</h3>
+            <article aria-labelledby="article-5">
+                <h3 id="article-5">Morgonlöpning & frukost</h3>
                 <!-- TAG -->Sport<!-- /TAG -->
                 <time datetime="2026-06-01">1 juni</time> 
                 <!-- PLACE -->Slottsskogen, Göteborg<!-- /PLACE -->
             </article>
 
-            <article>
-                <h3>Jazzkväll på Vasateatern</h3>
+            <article aria-labelledby="article-6">
+                <h3 id="article-6">Jazzkväll på Vasateatern</h3>
                 <!-- TAG -->Konsert<!-- /TAG -->
                 <time datetime="2026-05-24">3 juni</time> 
                 <!-- PLACE -->Vasateatern, Göteborg<!-- /PLACE -->
@@ -228,8 +228,8 @@
     <!-- PAGE FOOTER -->
     <!-- =========== -->
     <footer>
-        <section>
-            <h2>Evently</h2>
+        <section aria-label="Sociala medier">
+            <h2 id="footer-section-1">Evently</h2>
             <p>
                 Evently samlar lokala evenemang så att du enkelt kan upptäcka, planera och dela upplevelser som berikar din vardag.
             </p>
@@ -272,8 +272,8 @@
             </ul>
         </section>
 
-        <section>
-            <h3>Utforska</h3>
+        <section aria-labelledby="footer-section-2">
+            <h3 id="footer-section-2">Utforska</h3>
             <ul>
                 <li><a>Alla evenemang</a></li>
                 <li><a>Kategorier</a></li>
@@ -282,8 +282,8 @@
             </ul>
         </section>
 
-        <section>
-            <h3>Om Evently</h3>
+        <section aria-labelledby="footer-section-3">
+            <h3 id="footer-section-3">Om Evently</h3>
             <ul>
                 <li><a href="#">Om oss</a></li>
                 <li><a href="#">För arrangörer</a></li>
@@ -292,8 +292,8 @@
             </ul>
         </section>
 
-        <section>
-            <h3>Kontakt</h3>
+        <section aria-labelledby="footer-section-4">
+            <h3 id="footer-section-4">Kontakt</h3>
             <address>
                 <a href="#">info@evently.se</a> <!-- TODO: mailto -->
                 <a href="#">031-123 45 67</a> <!-- TODO: telephone? -->
