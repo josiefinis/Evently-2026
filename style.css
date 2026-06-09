@@ -44,6 +44,7 @@
 
     /* Spacing */
     --spacing: 0.25rem;
+
 }
 
 
@@ -73,9 +74,9 @@ html {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
     display: block;
+    height: auto;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -253,21 +254,41 @@ button {
     margin-inline-start: auto;
 }
 
+.hero {
+    grid-template-columns: 1fr;
+}
+
 .hero__heading {
-    font-size: clamp(1.0rem, 4cqi + 0.5rem, 10rem);
+    font-size: clamp(1.0rem, 8cqi + 0.5rem, 4rem);
     font-weight: 900;
 }
 
 .hero__supporting-text {
-    font-size: clamp(1.0rem, 1cqi + 0.5rem, 10rem);
+    font-size: clamp(1.0rem, 1.5cqi + 0.5rem, 2rem);
 }
 
 .hero__figure {
-
+    grid-template-columns: 1fr 1fr 1fr;
     img {
-        aspect-ratio: 1;
-        inline-size: auto;
-        flex: auto;
+        block-size: 100%;
+        inline-size: 100%;
+        border-radius: 1rem;
+    }
+}
+
+@media (width > 1000px) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero__figure {
+        height: auto;
+        grid-template-columns: 1.6fr 1fr;
+        --grid-gap: 0.5rem;
+
+        :first-child {
+            grid-row: span 2;
+        }
     }
 }
 
@@ -310,7 +331,7 @@ button {
 }
 
 .section__heading {
-    font-size: clamp(1.0rem, 3cqi + 0.5rem, 10rem); /* TODO: set max */
+    font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); /* TODO: set max */
     font-weight: 700;
 }
 
