@@ -77,7 +77,7 @@
     <main id="main">
         <!-- Main Content - Header: Hero -->
         <header class="hero" aria-labelledby="hero__heading"> 
-            <div>
+            <div class="hero__text-field">
                 <span>Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
                 <h1 class="hero__heading" id="hero__heading">Hitta lokala evenemang du kommer älska</h1>
                 <p class="hero__supporting-text">Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
@@ -154,108 +154,121 @@
 
         <!-- Main Content - Section: Popular events -->
         <!-- ============================ -->
-        <section class="section |grid-content" aria-labelledby="section-1">
-            <header>
+        <section class="section | flow margin-inline" aria-labelledby="section-1">
+            <header class="section__header | flex">
                 <h2 class="section__heading" id="section-1">Populära evenemang</h2>
                 <a href="#">Se alla evenemang</a>
             </header>
 
-            <article class="card" data-type="concert" aria-labelledby="article-1">
-                <img 
-                    class="card__img"
-                    alt="" 
-                    loading="lazy"
-                    src="https://picsum.photos/200"
-                    alt="picsum placeholder image"
-                    width="200"
-                    height="200"
-                > 
-                <h3 class="card__heading" id="article-1">Indie Night med Nova Sun</h3>
-                <!-- Konsert -->
-                <time datetime="2026-05-24">24 maj</time> 
-                <p>Pustervik, Göteborg</p>
-            </article>
+            <div class="columns">
+                <article class="card | flow" aria-labelledby="article-1">
+                    <img 
+                        class="card__img"
+                        alt="" 
+                        loading="lazy"
+                        src="https://picsum.photos/200"
+                        alt="picsum placeholder image"
+                        width="200"
+                        height="200"
+                    > 
+                    <h3 class="card__heading" id="article-1">Indie Night med Nova Sun</h3>
+                    <div class="flex">
+                        <span class="card__tag" data-type="konsert">Konsert</span>
+                        <time class="card__date" datetime="2026-05-24">24 maj</time> 
+                    </div>
+                    <p>Pustervik, Göteborg</p>
+                </article>
 
-            <article class="card" data-type="market" aria-labelledby="article-2">
-                <img 
-                    class="card__img"
-                    alt="" 
-                    loading="lazy"
-                    src="https://picsum.photos/200"
-                    alt="picsum placeholder image"
-                    width="200"
-                    height="200"
-                > 
-                <h3 class="card__heading" id="article-2">Vårmarknad i Slottsskogen</h3>
-                <!-- Marknad -->
-                <time datetime="2026-05-25">25 maj</time> 
-                <p>Slottsskogen, Göteborg</p>
-            </article>
+                <article class="card | flow" aria-labelledby="article-2">
+                    <img 
+                        class="card__img"
+                        alt="" 
+                        loading="lazy"
+                        src="https://picsum.photos/200"
+                        alt="picsum placeholder image"
+                        width="200"
+                        height="200"
+                    > 
+                    <h3 class="card__heading" id="article-2">Vårmarknad i Slottsskogen</h3>
+                    <div class="flex">
+                        <span class="card__tag"  data-type="marknad">Marknad</span>
+                        <time class="card__date" datetime="2026-05-25">25 maj</time> 
+                    </div>
+                    <p>Slottsskogen, Göteborg</p>
+                </article>
 
-            <article class="card" data-type="workshop" aria-labelledby="article-3">
-                <img 
-                    class="card__img"
-                    alt="" 
-                    loading="lazy"
-                    src="https://picsum.photos/200"
-                    alt="picsum placeholder image"
-                    width="200"
-                    height="200"
-                > 
-                <h3 class="card__heading" id="article-3">Keramikkurs för nybörjare</h3>
-                <!-- Workshop -->
-                <time datetime="2026-05-27">27 maj</time> 
-                <p>Studio Lera, Göteborg</p>
-            </article>
+                <article class="card | flow" aria-labelledby="article-3">
+                    <img 
+                        class="card__img"
+                        alt="" 
+                        loading="lazy"
+                        src="https://picsum.photos/200"
+                        alt="picsum placeholder image"
+                        width="200"
+                        height="200"
+                    > 
+                    <h3 class="card__heading" id="article-3">Keramikkurs för nybörjare</h3>
+                    <div class="flex">
+                        <span class="card__tag" data-type="workshop">Workshop</span>
+                        <time class="card__date" datetime="2026-05-27">27 maj</time> 
+                    </div>
+                    <p>Studio Lera, Göteborg</p>
+                </article>
 
-            <article class="card" data-type="family" aria-labelledby="article-4">
-                <img 
-                    class="card__img"
-                    alt="" 
-                    loading="lazy"
-                    src="https://picsum.photos/200"
-                    alt="picsum placeholder image"
-                    width="200"
-                    height="200"
-                > 
-                <h3 class="card__heading" id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
-                <!-- Familj -->
-                <time datetime="2026-05-31">31 maj</time> 
-                <p>Folkteatern, Göteborg</p>
-            </article>
+                <article class="card | flow" aria-labelledby="article-4">
+                    <img 
+                        class="card__img"
+                        alt="" 
+                        loading="lazy"
+                        src="https://picsum.photos/200"
+                        alt="picsum placeholder image"
+                        width="200"
+                        height="200"
+                    > 
+                    <h3 class="card__heading" id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
+                    <div class="flex">
+                        <span class="card__tag" data-type="familj">Familj</span>
+                        <time class="card__date" datetime="2026-05-31">31 maj</time> 
+                    </div>
+                    <p>Folkteatern, Göteborg</p>
+                </article>
 
-            <article class="card" data-type="sport" aria-labelledby="article-5">
-                <img 
-                    class="card__img"
-                    alt="" 
-                    loading="lazy"
-                    src="https://picsum.photos/200"
-                    alt="picsum placeholder image"
-                    width="200"
-                    height="200"
-                > 
-                <h3 class="card__heading" id="article-5">Morgonlöpning & frukost</h3>
-                <!-- Sport -->
-                <time datetime="2026-06-01">1 juni</time> 
-                <p>Slottsskogen, Göteborg</p>
-            </article>
+                <article class="card | flow" aria-labelledby="article-5">
+                    <img 
+                        class="card__img"
+                        alt="" 
+                        loading="lazy"
+                        src="https://picsum.photos/200"
+                        alt="picsum placeholder image"
+                        width="200"
+                        height="200"
+                    > 
+                    <h3 class="card__heading" id="article-5">Morgonlöpning & frukost</h3>
+                    <div class="flex">
+                        <span class="card__tag" data-type="sport">Sport</span>
+                        <time class="card__date" datetime="2026-06-01">1 juni</time> 
+                    </div>
+                    <p>Slottsskogen, Göteborg</p>
+                </article>
 
-            <article class="card" data-type="concert" aria-labelledby="article-6">
-                <img 
-                    class="card__img"
-                    alt="" 
-                    loading="lazy"
-                    src="https://picsum.photos/200"
-                    alt="picsum placeholder image"
-                    width="200"
-                    height="200"
-                > 
-                <h3 class="card__heading" id="article-6">Jazzkväll på Vasateatern</h3>
-                <!-- Konsert -->
-                <time datetime="2026-05-24">3 juni</time> 
-                <p>Vasateatern, Göteborg</p>
-            </article>
-            
+                <article class="card | flow" aria-labelledby="article-6">
+                    <img 
+                        class="card__img"
+                        alt="" 
+                        loading="lazy"
+                        src="https://picsum.photos/200"
+                        alt="picsum placeholder image"
+                        width="200"
+                        height="200"
+                    > 
+                    <h3 class="card__heading" id="article-6">Jazzkväll på Vasateatern</h3>
+                    <div class="flex">
+                        <span class="card__tag" data-type="konsert">Konsert</span>
+                        <time class="card__date" datetime="2026-05-24">3 juni</time> 
+                    </div>
+                    <p>Vasateatern, Göteborg</p>
+                </article>
+            </div>
         </section>
 
         <!-- Main Content - Footer: merit badges -->
@@ -307,7 +320,18 @@
     <!-- =========== -->
     <footer class="page-footer | flex">
         <section aria-label="Sociala medier">
-            <h2 id="footer-section-1">Evently</h2>
+            <h2 id="footer-section-1">
+                <div class="logo">
+                    <!-- logo icon -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true">
+                        <path
+                            d="M12 2c-.4 2.3-1.8 3.7-4.1 4.1C10.2 6.5 11.6 7.9 12 10.2c.4-2.3 1.8-3.7 4.1-4.1-2.3-.4-3.7-1.8-4.1-4.1zM6 10c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3zm12 2c-.3 1.7-1.3 2.7-3 3 1.7.3 2.7 1.3 3 3 .3-1.7 1.3-2.7 3-3-1.7-.3-2.7-1.3-3-3z" />
+                    </svg>
+                    Evently</h2>
+                    <span class="logo__text">Evently</span>
+                </div>
+            </h2>
             <p>
                 Evently samlar lokala evenemang så att du enkelt kan upptäcka, planera och dela upplevelser som berikar din vardag.
             </p>
