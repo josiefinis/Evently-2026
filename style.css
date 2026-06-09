@@ -9,6 +9,8 @@
     --font-size-m: 1rem;
     --font-size-s: 0.8rem;
 
+    --font-weight-bold: 600;
+
 
     /* Brand Colors */
     --purple-100: oklch(95.6% 0.028 282);
@@ -116,6 +118,13 @@ p {
     text-wrap: pretty;
 }
 
+button {
+    background-color: var(--purple-600);
+    color: white; /* TODO match color */
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.25em;
+}
 
 
 /* Custom premium scrollbar */
@@ -186,6 +195,12 @@ p {
     flex-wrap: wrap; 
 }
 
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--flex-gap, 1rem);
+}
+
 .flow > * + * {
     margin-block-start: var(--flow-space, 1em);
 }
@@ -213,6 +228,14 @@ p {
     margin-inline: 3cqi;
 }
 
+.bg-clr-brand-transparent {
+    background-color: oklch(from var(--purple-400) l c h / 0.2); /* TODO: match light theme oklch(0.9553 0.0215 280.29) */
+}
+
+.bg-clr-brand {
+    background-color: oklch(50% 0.2 280.29 / 0.1); /* TODO: match light theme oklch(0.9553 0.0215 280.29) */
+}
+
 /* ======================================================================
  * BLOCKS
  * ======================================================================
@@ -235,10 +258,38 @@ p {
     font-weight: 900;
 }
 
-.search-form__heading {
+.search-event {
+    padding: 2rem;
+}
+
+.search-event__heading {
     font-size: var(--font-size-l);
     font-weight: 700;
 }
+
+.form {
+    align-items: flex-end;
+
+    > * {
+        min-inline-size: 20ch;
+        flex: 1;
+    }
+
+    > * {
+        --flex-gap: 0.3em;
+    }
+    input, select {
+        background-color: white; /* TODO: color match, dark theme*/
+        padding: 0.5em;
+        border-radius: 0.5em;
+        border: thin solid var(--purple-400); /* TODO: check color match */
+    }
+
+    label {
+        font-weight: var(--font-weight-bold);
+    }
+}
+
 
 .section__header {
     flex-wrap: nowrap;
@@ -277,9 +328,6 @@ p {
     margin-inline-start: auto;
 }
 
-.search-form {
-    background-color: oklch(50% 0.2 280.29 / 0.5); /* TODO: match light theme oklch(0.9553 0.0215 280.29) */
-}
 
 .main-content__footer {
     background-color: oklch(from var(--mint-50) l c h / 0.5) ; /* TODO: color match */
@@ -315,3 +363,17 @@ p {
  * ======================================================================
  */
 
+button[data-type=secondary] {
+    background-color: oklch(0 0 0 / 0);
+    color: var(--purple-600);
+    padding: 0.5em;
+    border: thin solid var(--purple-600);
+    border-radius: 0.25em;
+}
+
+button[data-type=icon] {
+    background-color: oklch(0 0 0 / 0);
+    color: var(--purple-600);
+    padding: 0.5em;
+    border-radius: 0.25em;
+}

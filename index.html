@@ -39,7 +39,7 @@
                     <span class="logo__text">Evently</span>
                 </div>
 
-                <button type="button" aria-label="Meny">
+                <button type="button" data-type="icon" aria-label="Meny">
                     <!-- hamburger icon -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -61,7 +61,7 @@
                 </nav>
 
                 <!-- SEARCH -->
-                <button class="banner__search" type="button" aria-label="Sök">
+                <button class="banner__search" type="button" data-type="icon" aria-label="Sök">
                     <!-- spyglass icon -->
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -86,13 +86,12 @@
                 <h1 class="hero__heading" id="hero__heading">Hitta lokala evenemang du kommer älska</h1>
                 <p class="hero__supporting-text">Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
                 <button type="button">Utforska evenemang</button>
-                <button type="button">Se helgens tips</button>
+                <button type="button" data-type="secondary">Se helgens tips</button>
             </div>
 
             <figure class="hero__figure">
                 <img 
                     class="hero__img"
-                    alt="" 
                     loading="lazy"
                     src="https://picsum.photos/200"
                     alt="picsum placeholder image"
@@ -101,7 +100,6 @@
                 > 
                 <img 
                     class="hero__img"
-                    alt="" 
                     loading="lazy"
                     src="https://picsum.photos/200"
                     alt="picsum placeholder image"
@@ -110,7 +108,6 @@
                 > 
                 <img 
                     class="hero__img"
-                    alt="" 
                     loading="lazy"
                     src="https://picsum.photos/200"
                     alt="picsum placeholder image"
@@ -122,19 +119,19 @@
 
         <!-- Main Content - Section: Search -->
         <!-- ==================== -->
-        <section class="search-form full-width" aria-labelledby="search">
+        <section class="search-event | full-width flow bg-clr-brand-transparent" aria-labelledby="search">
             <header>
-                <h2 class="search-form__heading" id="search">Hitta rätt evenemang</h2>
+                <h2 class="search-event__heading" id="search">Hitta rätt evenemang</h2>
             </header>
 
-            <form class="form" action="#" method="post" autocomplete="on" name="search-event">
+            <form class="form | flex" action="#" method="post" autocomplete="on" name="search-event">
 
-                <div class="form__input-group">
+                <div class="form__input-group | stack">
                     <label for="search-string">Sökord</label>
-                    <input type="text" id="search-string" name="search-string">
+                    <input type="text" id="search-string" name="search-string" placeholder="Sök på t.ex. konsert, yoga...">
                 </div>
 
-                <div class="form__input-group">
+                <div class="form__input-group | stack">
                     <label for="event-category">Kategori</label>
                     <select id="event-category" name="event-category">
                         <option value="konsert">Alla kategorier</option>
@@ -145,7 +142,7 @@
                     </select>
                 </div>
 
-                <div class="form__input-group">
+                <div class="form__input-group | stack">
                     <label for="event-date">Datum</label>
                     <input type="date" id="event-date" name="event-date">
                 </div>
