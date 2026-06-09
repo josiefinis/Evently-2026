@@ -181,10 +181,15 @@ button {
     grid-template-columns: inherit;
 }
 
-.columns {
+.container {
+    container-type: inline-size;
+    container-name: container;
+}
+
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-inline-size, 30ch), 1fr));
-    gap: var(--column-gap, 1rem);
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-inline-size, 20rem), 1fr));
+    gap: var(--grid-gap, 1rem);
 }
 
 .flex {
@@ -329,8 +334,43 @@ button {
 }
 
 
-.main-content__footer {
+.main-content__footer { /* TODO: utility class? */
     background-color: oklch(from var(--mint-50) l c h / 0.5) ; /* TODO: color match */
+    padding-block: 2rem;
+}
+
+.badges-container {
+    @media (width > 600px) {
+        grid-template-columns: 1fr 1fr 1fr;   
+    }
+}
+
+.badge {
+    padding: 6cqi;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+@container (width < 20rem) {
+    .badge {
+        flex-direction: column;
+    }
+
+    .badge p {
+        text-align: center;
+    }
+}
+
+.badge__icon {
+    flex: none;
+    aspect-ratio: 1;
+    width: 60px;
+    border-radius: 50%;
+    background-color: var(--purple-400);
+}
+
+.badge__name {
+    font-weight: var(--font-weight-bold);
 }
 
 .page-footer {
