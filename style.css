@@ -374,6 +374,8 @@ button {
 }
 
 .page-footer {
+    padding-block: 3rem;
+    --min-column-inline-size: 8rem;  
     background-color: var(--gray-950);
     color: #979794; /* TODO: Match color */
     h3 {
@@ -381,13 +383,12 @@ button {
         color: #93c2db /* TODO: Match color */
     }
 
-    > * {
-        flex: 1;
-        min-inline-size: 20ch;
-    }
+}
 
-    > :first-child {
-        flex: 2;
+.page-footer section {
+
+    &:first-child {
+        grid-column: span 2;
     }
 }
 
