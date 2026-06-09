@@ -351,7 +351,7 @@ button {
     flex-direction: row;
 }
 
-@container (width < 20rem) {
+@container (width < 23rem) {
     .badge {
         flex-direction: column;
     }
