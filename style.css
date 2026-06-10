@@ -264,6 +264,15 @@ button {
  * ======================================================================
  */
 
+.icon {
+    border-radius: 50%;
+    padding: calc(2 * var(--spacing));
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
     margin-inline-end: auto;
 }
@@ -433,6 +442,13 @@ button {
     padding: 6cqi;
     flex-wrap: nowrap;
     flex-direction: row;
+    --flex-gap: calc(8 * var(--spacing));
+    --flow-space: 0.5em;
+
+    .icon {
+        background-color: light-dark(var(--mint-200), var(--mint-700));
+        padding: calc(3 * var(--spacing));
+    }
 }
 
 @container (width < 23rem) {
@@ -445,16 +461,14 @@ button {
     }
 }
 
-.badge__icon {
-    flex: none;
-    aspect-ratio: 1;
-    width: 60px;
-    border-radius: 50%;
-    background-color: light-dark(var(--mint-200), var(--mint-700));
-}
 
 .badge__name {
     font-weight: var(--font-weight-bold);
+}
+
+.badge__supporting-text {
+    color: var(--gray-600);
+
 }
 
 .page-footer {
@@ -492,12 +506,6 @@ button {
 
     .icon {
         border: thin solid var(--gray-300);
-        border-radius: 50%;
-        padding: calc(2 * var(--spacing));
-        aspect-ratio: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 
