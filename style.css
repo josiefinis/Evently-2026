@@ -458,6 +458,7 @@ button {
 }
 
 .page-footer {
+    --grid-gap: 2rem;
     padding-block: 3rem;
     --min-column-inline-size: 8rem;  
     background-color: var(--gray-950);
@@ -472,10 +473,13 @@ button {
         color: var(--white);
     }
 
+    li {
+        line-height: 2;
+    }
+
 }
 
 .page-footer section {
-
     &:first-child {
         grid-column: span 2;
         color: var(--gray-300);
@@ -485,6 +489,16 @@ button {
 .social-media {
     color: var(--gray-300);
     justify-content: start;
+
+    .icon {
+        border: thin solid var(--gray-300);
+        border-radius: 50%;
+        padding: calc(2 * var(--spacing));
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
