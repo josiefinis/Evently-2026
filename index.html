@@ -52,7 +52,7 @@
                 <!-- TODO: implement hamburger menu with <dialog> -->
                 <nav>
                     <ul class="flex">
-                        <li><a href="#">Hem</a></li>
+                        <li><a href="#" class="clr-brand">Hem</a></li>
                         <li><a href="#">Evenemang</a></li>
                         <li><a href="#">Kategorier</a></li>
                         <li><a href="#">Om oss</a></li>
@@ -82,7 +82,7 @@
         <!-- Main Content - Header: Hero -->
         <header class="hero | grid" aria-labelledby="hero__heading"> 
             <div class="hero__text-field | flow container">
-                <span>Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
+                <span class="tag" data-type="brand">Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
                 <h1 class="hero__heading" id="hero__heading">Hitta lokala evenemang du kommer älska</h1>
                 <p class="hero__supporting-text">Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
                 <button type="button">Utforska evenemang</button>
@@ -152,7 +152,7 @@
         <section class="section | flow" aria-labelledby="section-1">
             <header class="section__header | flex">
                 <h2 class="section__heading" id="section-1">Populära evenemang</h2>
-                <a href="#">Se alla evenemang</a>
+                <a href="#" class="clr-brand" data-type="arrow">Se alla evenemang</a>
             </header>
 
             <div class="cards-container | grid">
@@ -168,10 +168,10 @@
                     > 
                     <h3 class="card__heading" id="article-1">Indie Night med Nova Sun</h3>
                     <div class="flex">
-                        <span class="card__tag" data-type="konsert">Konsert</span>
+                        <span class="tag" data-type="konsert">Konsert</span>
                         <time class="card__date" datetime="2026-05-24">24 maj</time> 
                     </div>
-                    <p>Pustervik, Göteborg</p>
+                    <p class="card__location">Pustervik, Göteborg</p>
                 </article>
 
                 <article class="card | flow" aria-labelledby="article-2">
@@ -186,10 +186,10 @@
                     > 
                     <h3 class="card__heading" id="article-2">Vårmarknad i Slottsskogen</h3>
                     <div class="flex">
-                        <span class="card__tag"  data-type="marknad">Marknad</span>
+                        <span class="tag"  data-type="marknad">Marknad</span>
                         <time class="card__date" datetime="2026-05-25">25 maj</time> 
                     </div>
-                    <p>Slottsskogen, Göteborg</p>
+                    <p class="card__location">Slottsskogen, Göteborg</p>
                 </article>
 
                 <article class="card | flow" aria-labelledby="article-3">
@@ -204,10 +204,10 @@
                     > 
                     <h3 class="card__heading" id="article-3">Keramikkurs för nybörjare</h3>
                     <div class="flex">
-                        <span class="card__tag" data-type="workshop">Workshop</span>
+                        <span class="tag" data-type="workshop">Workshop</span>
                         <time class="card__date" datetime="2026-05-27">27 maj</time> 
                     </div>
-                    <p>Studio Lera, Göteborg</p>
+                    <p class="card__location">Studio Lera, Göteborg</p>
                 </article>
 
                 <article class="card | flow" aria-labelledby="article-4">
@@ -222,10 +222,10 @@
                     > 
                     <h3 class="card__heading" id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
                     <div class="flex">
-                        <span class="card__tag" data-type="familj">Familj</span>
+                        <span class="tag" data-type="familj">Familj</span>
                         <time class="card__date" datetime="2026-05-31">31 maj</time> 
                     </div>
-                    <p>Folkteatern, Göteborg</p>
+                    <p class="card__location">Folkteatern, Göteborg</p>
                 </article>
 
                 <article class="card | flow" aria-labelledby="article-5">
@@ -240,10 +240,10 @@
                     > 
                     <h3 class="card__heading" id="article-5">Morgonlöpning & frukost</h3>
                     <div class="flex">
-                        <span class="card__tag" data-type="sport">Sport</span>
+                        <span class="tag" data-type="sport">Sport</span>
                         <time class="card__date" datetime="2026-06-01">1 juni</time> 
                     </div>
-                    <p>Slottsskogen, Göteborg</p>
+                    <p class="card__location">Slottsskogen, Göteborg</p>
                 </article>
 
                 <article class="card | flow" aria-labelledby="article-6">
@@ -258,10 +258,10 @@
                     > 
                     <h3 class="card__heading" id="article-6">Jazzkväll på Vasateatern</h3>
                     <div class="flex">
-                        <span class="card__tag" data-type="konsert">Konsert</span>
+                        <span class="tag" data-type="konsert">Konsert</span>
                         <time class="card__date" datetime="2026-05-24">3 juni</time> 
                     </div>
-                    <p>Vasateatern, Göteborg</p>
+                    <p class="card__location">Vasateatern, Göteborg</p>
                 </article>
             </div>
         </section>

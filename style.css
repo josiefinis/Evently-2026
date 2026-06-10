@@ -33,6 +33,8 @@
     /* Utility Colors */
     --mint-50: oklch(97.5% 0.015 165);
     --mint-200: oklch(92% 0.035 165);
+    --mint-700: oklch(from var(--mint-200) 30% c h);
+    --mint-900: oklch(from var(--mint-50) 20% c h);
     --emerald-100: oklch(95.9% 0.04 144);
     --emerald-800: oklch(52.71% 0.1654 142.1);
     --orange-100: oklch(96.8% 0.05 90);
@@ -41,6 +43,21 @@
     --pink-800: oklch(48.55% 0.2038 350.7);
     --blue-100: oklch(92.8% 0.05 250);
     --blue-800: oklch(45% 0.20 260);
+
+    /* Semantic Colors */
+    --clr-subtle-text: light-dark(var(--gray-600), var(--gray-400));
+    --bg-brand-tag: var(--purple-200);
+    --clr-brand-tag: var(--purple-800);
+    --bg-concert: var(--purple-200);
+    --clr-concert: var(--purple-800);
+    --bg-sport: var(--blue-100);
+    --clr-sport: var(--blue-800);
+    --bg-family: var(--pink-100);
+    --clr-family: var(--pink-800);
+    --bg-workshop: var(--orange-100);
+    --clr-workshop: var(--orange-800);
+    --bg-market: var(--emerald-100);
+    --clr-market: var(--emerald-800);
 
     /* Spacing */
     --spacing: 0.25rem;
@@ -101,7 +118,7 @@ html {
 
 body {
     font-family: var(--font-inter);
-    color: light-dark(var(--gray-900), var(--gray-100));
+    color: light-dark(var(--gray-900), var(--gray-100)); 
 }
 
 h1,
@@ -234,12 +251,13 @@ button {
 }
 
 .bg-clr-brand-transparent {
-    background-color: oklch(from var(--purple-400) l c h / 0.2); /* TODO: match light theme oklch(0.9553 0.0215 280.29) */
+    background-color: oklch(from var(--purple-200) l c h / 0.55); 
 }
 
-.bg-clr-brand {
-    background-color: oklch(50% 0.2 280.29 / 0.1); /* TODO: match light theme oklch(0.9553 0.0215 280.29) */
+.clr-brand {
+    color: var(--purple-600);
 }
+
 
 /* ======================================================================
  * BLOCKS
@@ -265,6 +283,7 @@ button {
 
 .hero__supporting-text {
     font-size: clamp(1.0rem, 1.5cqi + 0.5rem, 2rem);
+    color: var(--clr-subtle-text);
 }
 
 .hero__figure {
@@ -364,13 +383,26 @@ button {
     border-top-right-radius: 1rem;
 }
 
+.tag {
+    padding-block: var(--spacing);
+    padding-inline: calc(3 * var(--spacing));
+    border-radius: var(--spacing);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+}
+
 .card__date {
     margin-inline-start: auto;
+    color: var(--clr-subtle-text);
+}
+
+.card__location {
+    color: var(--clr-subtle-text);
 }
 
 
 .main-content__footer { /* TODO: utility class? */
-    background-color: oklch(from var(--mint-50) l c h / 0.5) ; /* TODO: color match */
+    background-color: light-dark(var(--mint-50), var(--mint-900)); 
     padding-block: 2rem;
 }
 
@@ -401,7 +433,7 @@ button {
     aspect-ratio: 1;
     width: 60px;
     border-radius: 50%;
-    background-color: var(--purple-400);
+    background-color: light-dark(var(--mint-200), var(--mint-700));
 }
 
 .badge__name {
@@ -412,10 +444,15 @@ button {
     padding-block: 3rem;
     --min-column-inline-size: 8rem;  
     background-color: var(--gray-950);
-    color: #979794; /* TODO: Match color */
+    color: var(--gray-400); 
     h3 {
         text-transform: uppercase;
-        color: #93c2db /* TODO: Match color */
+        font-weight: var(--font-weight-bold);
+        color: var(--gray-300); 
+    }
+
+    .logo {
+        color: var(--white);
     }
 
 }
@@ -424,10 +461,12 @@ button {
 
     &:first-child {
         grid-column: span 2;
+        color: var(--gray-300);
     }
 }
 
 .social-media {
+    color: var(--gray-300);
     justify-content: start;
 }
 
@@ -452,4 +491,39 @@ button[data-type=icon] {
     color: var(--purple-600);
     padding: 0.5em;
     border-radius: 0.25em;
+}
+
+a[data-type=arrow]::after {
+    content: " \2192";
+}
+
+.tag[data-type=brand] {
+    background-color: var(--bg-brand-tag);
+    color: var(--clr-brand-tag);
+    padding-inline: calc(4 * var(--spacing));
+}
+
+.tag[data-type=konsert] {
+    background-color: var(--bg-concert);
+    color: var(--clr-concert);
+}
+
+.tag[data-type=marknad] {
+    background-color: var(--bg-market);
+    color: var(--clr-market);
+}
+
+.tag[data-type=workshop] {
+    background-color: var(--bg-workshop);
+    color: var(--clr-workshop);
+}
+
+.tag[data-type=familj] {
+    background-color: var(--bg-family);
+    color: var(--clr-family);
+}
+
+.tag[data-type=sport] {
+    background-color: var(--bg-sport);
+    color: var(--clr-sport);
 }
