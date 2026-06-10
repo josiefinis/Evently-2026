@@ -13,6 +13,7 @@
     --font-weight-bolder: 800;
 
 
+    /* TODO: fix oklch colors to be in gamut. */
     /* Brand Colors */
     --purple-100: oklch(95.6% 0.028 282);
     --purple-200: oklch(91.7% 0.049 281);
@@ -30,6 +31,7 @@
     --gray-900: oklch(18.23% 0.0298 274.65);
     --gray-950: oklch(18.23% 0.0298 274.65);
     --white: oklch(100% 0 0);
+    --black: oklch(0 0 0);
 
     /* Utility Colors */
     --mint-50: oklch(97.5% 0.015 165);
@@ -45,6 +47,7 @@
     --blue-100: oklch(92.8% 0.05 250);
     --blue-800: oklch(45% 0.20 260);
 
+    /* TODO: fix dark mode colors. */
     /* Semantic Colors */
     --clr-accent: light-dark(var(--purple-800), var(--purple-200));
     --clr-subtle-text: light-dark(var(--gray-600), var(--gray-400));
@@ -52,6 +55,7 @@
     --clr-secondary-button-hover: var(--purple-200);
     --clr-icon-button-hover: var(--purple-200);
     --clr-focus: var(--purple-400);
+    --clr-shadow: light-dark(var(--gray-100), var(--black));
 
 
     --bg-brand-tag: var(--purple-200);
@@ -292,7 +296,7 @@ p {
 
 .button {
     background-color: var(--purple-600);
-    color: white; /* TODO match color */
+    color: var(--white); 
     padding: 0.5em;
     border: none;
     border-radius: 0.25em;
@@ -400,10 +404,10 @@ p {
         --flex-gap: 0.3em;
     }
     input, select {
-        background-color: white; /* TODO: color match, dark theme*/
+        background-color: white; 
         padding: 0.5em;
         border-radius: 0.5em;
-        border: thin solid var(--purple-400); /* TODO: check color match */
+        border: thin solid var(--purple-400); 
     }
 
     label {
@@ -431,8 +435,8 @@ p {
 .card {
     position: relative;
     border-radius: 1rem;
-    box-shadow: 2px 2px 2px var(--gray-100),
-               -2px 2px 2px var(--gray-100);
+    box-shadow: 2px 2px 2px var(--clr-shadow),
+               -2px 2px 2px var(--clr-shadow);
     container-type: inline-size;
     padding-block-end: calc(2cqi + 0.5rem);
     grid-template-columns: 1fr 1fr;
@@ -477,7 +481,7 @@ p {
 }
 
 .tag {
-    font-size: clamp(0.8rem, 2cqi + 0.5rem, 2rem); 
+    font-size: clamp(0.8rem, 2cqi + 0.5rem, 1rem); 
     padding-block: var(--spacing);
     padding-inline: calc(3 * var(--spacing));
     border-radius: var(--spacing);
@@ -549,6 +553,7 @@ p {
 
 }
 
+/* TODO: fix so that address lines do not wrap. Maybe a different solution for footer with flex would be better? */
 .page-footer {
     margin: 0;
     --grid-gap: 2rem;
