@@ -550,6 +550,7 @@ p {
 }
 
 .page-footer {
+    margin: 0;
     --grid-gap: 2rem;
     padding-block: 3rem;
     --min-column-inline-size: 8rem;  
