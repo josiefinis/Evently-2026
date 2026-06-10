@@ -261,8 +261,8 @@ p {
 }
 
 .focus-within:focus-within {
-      outline: 2px solid var(--clr-focus);
-      outline-offset: 2px;
+    outline: 2px solid var(--clr-focus);
+    outline-offset: 2px;
 }
 
 
@@ -270,6 +270,20 @@ p {
  * BLOCKS
  * ======================================================================
  */
+
+.skip-link {
+    padding: 1.2rem;
+    background-color: var(--clr-focus);
+    color: contrast-color(var(--clr-focus));
+    position: absolute;
+    inset-block-start: -1000px;
+    inline-size: 100%;
+    text-align: center;
+
+    &:focus {
+        inset-block-start: 0px;
+    }
+}
 
 .button {
     background-color: var(--purple-600);
@@ -405,6 +419,7 @@ p {
 }
 
 .card {
+    position: relative;
     border-radius: 1rem;
     box-shadow: 2px 2px 2px var(--gray-100),
                -2px 2px 2px var(--gray-100);
@@ -415,17 +430,31 @@ p {
     > * + * {
         margin-inline: calc(3cqi + 0.5rem);
     }
+
+    &:hover {
+        outline: 2px solid var(--clr-focus);
+        outline-offset: 2px;
+    }
+}
+
+.card__main-link {
+    order: 4;
+    &::after {
+        content: ''; 
+        position: absolute; 
+        inset: 0; 
+        z-index: 1;
+    }
+    &:focus-visible {
+        outline: none;
+    }
 }
 
 .card__heading {
     grid-column: span 2;
-    order: 4;
     font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); 
     font-weight: 600;
 
-    .link:focus-visible {
-        outline: none;
-    }
 }
 
 .card__img {
