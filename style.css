@@ -361,22 +361,28 @@ button {
 }
 
 .card {
-    border: thin dashed red;
     border-radius: 1rem;
+    box-shadow: 2px 2px 2px var(--gray-100),
+               -2px 2px 2px var(--gray-100);
     container-type: inline-size;
-    padding-block-end: 1em;
+    padding-block-end: calc(2cqi + 0.5rem);
+    grid-template-columns: 1fr 1fr;
 
     > * + * {
-        margin-inline: 3cqi;
+        margin-inline: calc(3cqi + 0.5rem);
     }
 }
 
 .card__heading {
-    font-size: clamp(1.0rem, 3cqi + 0.5rem, 10rem); /* TODO: set max */
+    grid-column: span 2;
+    order: 4;
+    font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); 
     font-weight: 600;
 }
 
 .card__img {
+    order: 1;
+    grid-column: span 2;
     inline-size: 100%;
     aspect-ratio: 16/9;
     border-top-left-radius: 1rem;
@@ -384,6 +390,7 @@ button {
 }
 
 .tag {
+    font-size: clamp(0.8rem, 2cqi + 0.5rem, 2rem); 
     padding-block: var(--spacing);
     padding-inline: calc(3 * var(--spacing));
     border-radius: var(--spacing);
@@ -391,12 +398,22 @@ button {
     font-weight: var(--font-weight-bold);
 }
 
+.card .tag {
+    order: 2;
+    margin-inline-end: auto;
+}
+
 .card__date {
+    order: 3;
+    font-size: clamp(0.8rem, 2cqi + 0.5rem, 2rem); 
     margin-inline-start: auto;
     color: var(--clr-subtle-text);
 }
 
 .card__location {
+    order: 5;
+    grid-column: span 2;
+    font-size: clamp(0.8rem, 2cqi + 0.5rem, 2rem); 
     color: var(--clr-subtle-text);
 }
 
