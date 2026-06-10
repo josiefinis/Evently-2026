@@ -1,7 +1,7 @@
 :root {
     /* Fonts */
-    --font-inter: 'Inter', serif, system-ui, -apple-system, sans-serif;
-    --font-poppins: 'Poppins', serif, system-ui, -apple-system, sans-serif;
+    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
 
     --font-size-xxl: 3rem;
     --font-size-xl: 2rem;
@@ -45,7 +45,14 @@
     --blue-800: oklch(45% 0.20 260);
 
     /* Semantic Colors */
+    --clr-accent: light-dark(var(--purple-800), var(--purple-200));
     --clr-subtle-text: light-dark(var(--gray-600), var(--gray-400));
+    --clr-button-hover: var(--purple-800);
+    --clr-secondary-button-hover: var(--purple-200);
+    --clr-icon-button-hover: var(--purple-200);
+    --clr-focus: var(--purple-400);
+
+
     --bg-brand-tag: var(--purple-200);
     --clr-brand-tag: var(--purple-800);
     --bg-concert: var(--purple-200);
@@ -136,15 +143,6 @@ p {
     text-wrap: pretty;
 }
 
-button {
-    background-color: var(--purple-600);
-    color: white; /* TODO match color */
-    padding: 0.5em;
-    border: none;
-    border-radius: 0.25em;
-}
-
-
 /* Custom premium scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -164,6 +162,10 @@ button {
     background: var(--purple-400);
 }
 
+:focus-visible {
+    outline: 2px solid var(--clr-focus);
+    outline-offset: 2px;
+}
 
 /* ======================================================================
  * COMPOSITION
@@ -258,11 +260,44 @@ button {
     color: var(--purple-600);
 }
 
+.focus-within:focus-within {
+      outline: 2px solid var(--clr-focus);
+      outline-offset: 2px;
+}
+
 
 /* ======================================================================
  * BLOCKS
  * ======================================================================
  */
+
+.button {
+    background-color: var(--purple-600);
+    color: white; /* TODO match color */
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.25em;
+
+    &:hover {
+        background-color: var(--clr-button-hover);
+        color: contrast-color(var(--clr-button-hover));
+    }
+}
+
+
+.link {
+    border-radius: 2px;
+    &:focus-visible {
+        outline: 2px solid var(--clr-focus);
+        outline-offset: 4px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 0.4em;
+    }
+}
 
 .icon {
     border-radius: 50%;
@@ -387,6 +422,10 @@ button {
     order: 4;
     font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); 
     font-weight: 600;
+
+    .link:focus-visible {
+        outline: none;
+    }
 }
 
 .card__img {
@@ -467,7 +506,7 @@ button {
 }
 
 .badge__supporting-text {
-    color: var(--gray-600);
+    color: var(--clr-subtle-text);
 
 }
 
@@ -503,6 +542,7 @@ button {
 .social-media {
     color: var(--gray-300);
     justify-content: start;
+    margin-block-end: auto;
 
     .icon {
         border: thin solid var(--gray-300);
@@ -517,19 +557,37 @@ button {
  * ======================================================================
  */
 
-button[data-type=secondary] {
+.button[data-type=secondary] {
     background-color: oklch(0 0 0 / 0);
     color: var(--purple-600);
-    padding: 0.5em;
     border: thin solid var(--purple-600);
-    border-radius: 0.25em;
+    &:hover {
+        background-color: var(--clr-secondary-button-hover);
+    }
 }
 
-button[data-type=icon] {
+.button[data-type=icon] {
     background-color: oklch(0 0 0 / 0);
     color: var(--purple-600);
-    padding: 0.5em;
-    border-radius: 0.25em;
+    &:hover {
+        background-color: var(--clr-icon-button-hover);
+    }
+}
+
+.link[data-type=icon] {
+    &:hover {
+        color: var(--clr-focus);
+        .icon {
+            border-color: var(--clr-focus);
+        }
+    }
+
+    &:focus-visible {
+        color: var(--clr-focus);
+        .icon {
+            border-color: var(--clr-focus);
+        }
+    }
 }
 
 a[data-type=arrow]::after {

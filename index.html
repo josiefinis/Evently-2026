@@ -39,7 +39,7 @@
                     <span class="logo__text">Evently</span>
                 </span>
 
-                <button type="button" data-type="icon" aria-label="Meny">
+                <button class="button" type="button" data-type="icon" aria-label="Meny">
                     <!-- hamburger icon -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -52,16 +52,16 @@
                 <!-- TODO: implement hamburger menu with <dialog> -->
                 <nav>
                     <ul class="flex">
-                        <li><a href="#" class="clr-brand">Hem</a></li>
-                        <li><a href="#">Evenemang</a></li>
-                        <li><a href="#">Kategorier</a></li>
-                        <li><a href="#">Om oss</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a class="link" href="#" class="clr-brand">Hem</a></li>
+                        <li><a class="link" href="#">Evenemang</a></li>
+                        <li><a class="link" href="#">Kategorier</a></li>
+                        <li><a class="link" href="#">Om oss</a></li>
+                        <li><a class="link" href="#">Kontakt</a></li>
                     </ul>
                 </nav>
 
                 <!-- SEARCH -->
-                <button class="banner__search" type="button" data-type="icon" aria-label="Sök">
+                <button class="banner__search button" type="button" data-type="icon" aria-label="Sök">
                     <!-- spyglass icon -->
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -70,7 +70,7 @@
                     </svg>
                 </button>
 
-                <button class="banner__login" type="button">Logga in</button>
+                <button class="banner__login button" type="button">Logga in</button>
             </div>
         </div>
     </header>
@@ -85,8 +85,8 @@
                 <span class="tag" data-type="brand">Upptäck. Upplev. Minns.</span> <!-- TODO: think about semanitcs and accessibility -->
                 <h1 class="hero__heading" id="hero__heading">Hitta lokala evenemang du kommer älska</h1>
                 <p class="hero__supporting-text">Från konserter och marknader till workshops och familjeaktiviteter. Upptäck vad som händer nära dig.</p>
-                <button type="button">Utforska evenemang</button>
-                <button type="button" data-type="secondary">Se helgens tips</button>
+                <button class="button" type="button">Utforska evenemang</button>
+                <button class="button" type="button" data-type="secondary">Se helgens tips</button>
             </div>
 
             <figure class="hero__figure | grid container">
@@ -141,7 +141,7 @@
                     <input type="date" id="event-date" name="event-date">
                 </div>
 
-                <button type="submit">
+                <button class="button" type="submit">
                     Sök evenemang
                 </button>
             </form>
@@ -152,11 +152,11 @@
         <section class="section | flow" aria-labelledby="section-1">
             <header class="section__header | flex">
                 <h2 class="section__heading" id="section-1">Populära evenemang</h2>
-                <a href="#" class="clr-brand" data-type="arrow">Se alla evenemang</a>
+                <a class="link clr-brand" href="#" data-type="arrow">Se alla evenemang</a>
             </header>
 
             <div class="cards-container | grid">
-                <article class="card | grid" aria-labelledby="article-1">
+                <article class="card | grid | focus-within" aria-labelledby="article-1">
                     <img 
                         class="card__img"
                         alt="" 
@@ -166,13 +166,13 @@
                         width="200"
                         height="200"
                     > 
-                    <h3 class="card__heading" id="article-1">Indie Night med Nova Sun</h3>
+                    <h3 class="card__heading" id="article-1"><a class="link" href="#">Indie Night med Nova Sun</a></h3>
                     <p class="tag" data-type="konsert">Konsert</p>
                     <time class="card__date" datetime="2026-05-24">24 maj</time> 
                     <p class="card__location">Pustervik, Göteborg</p>
                 </article>
 
-                <article class="card | grid" aria-labelledby="article-2">
+                <article class="card | grid | focus-within" aria-labelledby="article-2">
                     <img 
                         class="card__img"
                         alt="" 
@@ -182,13 +182,13 @@
                         width="200"
                         height="200"
                     > 
-                    <h3 class="card__heading" id="article-2">Vårmarknad i Slottsskogen</h3>
+                    <h3 class="card__heading" id="article-2"><a class="link" href="#">Vårmarknad i Slottsskogen</a></h3>
                     <p class="tag"  data-type="marknad">Marknad</p>
                     <time class="card__date" datetime="2026-05-25">25 maj</time> 
                     <p class="card__location">Slottsskogen, Göteborg</p>
                 </article>
 
-                <article class="card | grid" aria-labelledby="article-3">
+                <article class="card | grid | focus-within" aria-labelledby="article-3">
                     <img 
                         class="card__img"
                         alt="" 
@@ -198,13 +198,13 @@
                         width="200"
                         height="200"
                     > 
-                    <h3 class="card__heading" id="article-3">Keramikkurs för nybörjare</h3>
+                    <h3 class="card__heading" id="article-3"><a class="link" href="#">Keramikkurs för nybörjare</a></h3>
                     <p class="tag" data-type="workshop">Workshop</p>
                     <time class="card__date" datetime="2026-05-27">27 maj</time> 
                     <p class="card__location">Studio Lera, Göteborg</p>
                 </article>
 
-                <article class="card | grid" aria-labelledby="article-4">
+                <article class="card | grid | focus-within" aria-labelledby="article-4">
                     <img 
                         class="card__img"
                         alt="" 
@@ -214,13 +214,13 @@
                         width="200"
                         height="200"
                     > 
-                    <h3 class="card__heading" id="article-4">Barnteater: Den lilla sjöjungfrun</h3>
+                    <h3 class="card__heading" id="article-4"><a class="link" href="#">Barnteater: Den lilla sjöjungfrun</a></h3>
                     <p class="tag" data-type="familj">Familj</p>
                     <time class="card__date" datetime="2026-05-31">31 maj</time> 
                     <p class="card__location">Folkteatern, Göteborg</p>
                 </article>
 
-                <article class="card | grid" aria-labelledby="article-5">
+                <article class="card | grid | focus-within" aria-labelledby="article-5">
                     <img 
                         class="card__img"
                         alt="" 
@@ -230,13 +230,13 @@
                         width="200"
                         height="200"
                     > 
-                    <h3 class="card__heading" id="article-5">Morgonlöpning & frukost</h3>
+                    <h3 class="card__heading" id="article-5"><a class="link" href="#">Morgonlöpning & frukost</a></h3>
                     <p class="tag" data-type="sport">Sport</p>
                     <time class="card__date" datetime="2026-06-01">1 juni</time> 
                     <p class="card__location">Slottsskogen, Göteborg</p>
                 </article>
 
-                <article class="card | grid" aria-labelledby="article-6">
+                <article class="card | grid | focus-within" aria-labelledby="article-6">
                     <img 
                         class="card__img"
                         alt="" 
@@ -246,7 +246,7 @@
                         width="200"
                         height="200"
                     > 
-                    <h3 class="card__heading" id="article-6">Jazzkväll på Vasateatern</h3>
+                    <h3 class="card__heading" id="article-6"><a class="link" href="#">Jazzkväll på Vasateatern</a></h3>
                     <p class="tag" data-type="konsert">Konsert</p>
                     <time class="card__date" datetime="2026-05-24">3 juni</time> 
                     <p class="card__location">Vasateatern, Göteborg</p>
@@ -345,7 +345,7 @@
                     <!-- Socials -->
                     <ul class="social-media | flex">
                         <li>
-                            <a href="#" aria-label="instagram">
+                            <a class="link" data-type="icon" href="#" aria-label="instagram">
                                 <span class="icon">
                                     <!-- instagram icon -->
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -359,7 +359,7 @@
                         </li>
 
                         <li>
-                            <a href="#" aria-label="facebook">
+                            <a class="link" data-type="icon" href="#" aria-label="facebook">
                                 <span class="icon">
                                     <!-- facebook icon -->
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -371,7 +371,7 @@
                         </li>
 
                         <li>
-                            <a href="#" aria-label="twitter">
+                            <a class="link" data-type="icon" href="#" aria-label="twitter">
                                 <span class="icon">
                                     <!-- twitter icon -->
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -389,28 +389,28 @@
                 <section aria-labelledby="footer-section-2">
                     <h3 id="footer-section-2">Utforska</h3>
                     <ul>
-                        <li><a>Alla evenemang</a></li>
-                        <li><a>Kategorier</a></li>
-                        <li><a>Helgens tips</a></li>
-                        <li><a>Populära</a></li>
+                        <li><a class="link" href="#">Alla evenemang</a></li>
+                        <li><a class="link" href="#">Kategorier</a></li>
+                        <li><a class="link" href="#">Helgens tips</a></li>
+                        <li><a class="link" href="#">Populära</a></li>
                     </ul>
                 </section>
 
                 <section aria-labelledby="footer-section-3">
                     <h3 id="footer-section-3">Om Evently</h3>
                     <ul>
-                        <li><a href="#">Om oss</a></li>
-                        <li><a href="#">För arrangörer</a></li>
-                        <li><a href="#">Vanliga frågor</a></li>
-                        <li><a href="#">Nyheter</a></li>
+                        <li><a class="link" href="#">Om oss</a></li>
+                        <li><a class="link" href="#">För arrangörer</a></li>
+                        <li><a class="link" href="#">Vanliga frågor</a></li>
+                        <li><a class="link" href="#">Nyheter</a></li>
                     </ul>
                 </section>
 
                 <section class="contact" aria-labelledby="footer-section-4">
                     <h3 id="footer-section-4">Kontakt</h3>
                     <address class="flow">
-                        <p><a href="mailto:info@evently.se">info@evently.se</a></p>
-                        <p><a href="tel:+46 31 123 45 67">031-123 45 67</a></p>
+                        <p><a class="link" href="mailto:info@evently.se">info@evently.se</a></p>
+                        <p><a class="link" href="tel:+46 31 123 45 67">031-123 45 67</a></p>
                         <div>
                             <p>Stora Badhusgatan 18</p>
                             <p>411 21 Göteborg</p>
