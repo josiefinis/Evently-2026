@@ -272,6 +272,10 @@ p {
  * ======================================================================
  */
 
+.banner {
+    --flex-gap: 2rem;
+}
+
 .skip-link {
     padding: 1.2rem;
     background-color: var(--clr-focus);
