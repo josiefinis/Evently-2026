@@ -26,7 +26,7 @@
 
     <!-- BANNER -->
     <!-- ====== -->
-    <header class="banner | content-grid">
+    <header class="banner | content-grid container">
         <div class="full-width">
             <div class="flex">
                 <span class="logo">
@@ -39,18 +39,8 @@
                     <span class="logo__text">Evently</span>
                 </span>
 
-                <button class="button" type="button" data-type="icon" aria-label="Meny">
-                    <!-- hamburger icon -->
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <line x1="4" y1="12" x2="20" y2="12"></line>
-                        <line x1="4" y1="6" x2="20" y2="6"></line>
-                        <line x1="4" y1="18" x2="20" y2="18"></line>
-                    </svg>
-                </button>
-
                 <!-- TODO: implement hamburger menu with <dialog> -->
-                <nav>
+                <nav class="banner__nav">
                     <ul class="flex">
                         <li><a class="link clr-brand" href="#">Hem</a></li>
                         <li><a class="link" href="#">Evenemang</a></li>
@@ -71,6 +61,17 @@
                 </button>
 
                 <button class="banner__login button" type="button">Logga in</button>
+
+                <button id="hamburger" class="banner__hamburger button" type="button" data-type="icon" aria-label="Öppna meny">
+                    <!-- hamburger icon -->
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </button>
+
             </div>
         </div>
     </header>
