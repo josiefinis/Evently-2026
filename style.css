@@ -5,11 +5,17 @@
     --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
     --font-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
 
-    --font-size-xxl: 3rem;
-    --font-size-xl: 2rem;
-    --font-size-l: 1.5rem;
-    --font-size-m: 1rem;
-    --font-size-s: 0.8rem;
+    --static-font-size-xxl: 3rem;
+    --static-font-size-xl: 2rem;
+    --static-font-size-l: 1.5rem;
+    --static-font-size-m: 1rem; 
+    --static-font-size-s: 0.8rem;
+
+    --fluid-font-size-xxl: clamp(2.0rem, 8cqi + 0.5rem, 4rem);
+    --fluid-font-size-xl: clamp(1.2rem, 2cqi + 0.5rem, 2.5rem);
+    --fluid-font-size-l: clamp(1.0rem, 2cqi + 0.5rem, 2rem);
+    --fluid-font-size-m: clamp(0.8rem, 2cqi + 0.5rem, 1.1rem); 
+    --fluid-font-size-s: clamp(0.7rem, 1cqi + 0.5rem, 1rem); 
 
     --font-weight-bold: 600;
     --font-weight-bolder: 800;
@@ -309,6 +315,18 @@ p {
     outline-offset: 2px;
 }
 
+.fluid-fs-m {
+    font-size: var(--fluid-font-size-m);
+}
+
+.fluid-fs-s {
+    font-size: var(--fluid-font-size-s);
+}
+
+.flex-none {
+    flex: none;
+}
+
 
 /* ======================================================================
  * BLOCKS
@@ -371,16 +389,17 @@ p {
     align-items: center;
     gap: 0.75rem;
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-l);
+    font-size: var(--static-font-size-l); /* TODO: fluid? */
 }
 
 .section__header {
     flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: end;
 }
 
 .section__heading {
-    font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); /* TODO: set max */
+    font-size: var(--fluid-font-size-xl); 
     font-weight: 700;
 }
 
@@ -494,12 +513,12 @@ p {
 }
 
 .hero__heading {
-    font-size: clamp(1.0rem, 8cqi + 0.5rem, 4rem);
+    font-size: var(--fluid-font-size-xxl);
     font-weight: 900;
 }
 
 .hero__supporting-text {
-    font-size: clamp(1.0rem, 1.5cqi + 0.5rem, 2rem);
+    font-size: var(--fluid-font-size-l);
     color: var(--clr-subtle-text);
 }
 
@@ -536,7 +555,7 @@ p {
 }
 
 .search-event__heading {
-    font-size: var(--font-size-l);
+    font-size: var(--fluid-font-size-xl);
     font-weight: 700;
 }
 
@@ -551,15 +570,17 @@ p {
     > * {
         --flex-gap: 0.3em;
     }
-    input, select {
-        background-color: light-dark(var(--white), var(--gray-900)); 
-        padding: 0.5em;
-        border-radius: 0.5em;
-        border: thin solid var(--purple-400); 
-    }
-
     label {
         font-weight: var(--font-weight-bold);
+        font-size: var(--fluid-font-size-l);
+    }
+
+    input, select {
+        background-color: light-dark(var(--white), var(--gray-900)); 
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: thin solid var(--purple-400); 
+        font-size: var(--fluid-font-size-m);
     }
 }
 
@@ -608,9 +629,8 @@ p {
 }
 
 .card__heading {
-    font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); 
+    font-size: var(--fluid-font-size-xl); 
     font-weight: 600;
-
 }
 
 .card__img {
@@ -623,7 +643,7 @@ p {
 }
 
 .tag {
-    font-size: clamp(0.8rem, 2cqi + 0.5rem, 1rem); 
+    font-size: var(--fluid-font-size-m);
     padding-block: var(--spacing);
     padding-inline: calc(3 * var(--spacing));
     border-radius: var(--spacing);
@@ -638,7 +658,7 @@ p {
 
 .card__date {
     order: 3;
-    font-size: clamp(0.8rem, 2cqi + 0.5rem, 2rem); 
+    font-size: var(--fluid-font-size-m);
     margin-inline-start: auto;
     color: var(--clr-subtle-text);
 }
@@ -646,7 +666,7 @@ p {
 .card__location {
     order: 5;
     grid-column: span 2;
-    font-size: clamp(0.8rem, 2cqi + 0.5rem, 2rem); 
+    font-size: var(--fluid-font-size-m);
     color: var(--clr-subtle-text);
 }
 
@@ -700,15 +720,19 @@ p {
 /*        Page Footer    
  * ============================ 
  */
-/* TODO: fluid text sizing! Ideally using variables. */
-/* TODO: fix so that address lines do not wrap. Maybe a different solution for footer with flex would be better?*/
 .page-footer {
-    margin: 0;
-    --grid-gap: 2rem;
+    margin: 0; /* TODO: bit of a fudge, fix at compostitional level maybe? (dvs body flow) */
     padding-block: 3rem;
-    --min-column-inline-size: 8rem;  
     background-color: var(--gray-950);
     color: var(--gray-400); 
+    font-size: var(--fluid-font-size-s);
+
+    .flex {
+        justify-content: start;
+        align-items: start;
+        --flex-gap: 2rem;
+    }
+
     h3 {
         text-transform: uppercase;
         font-weight: var(--font-weight-bold);
@@ -726,21 +750,30 @@ p {
 }
 
 .page-footer section {
+    flex: auto;
+    max-inline-size: 18ch;
+
     &:first-child {
-        grid-column: span 2;
         color: var(--gray-300);
+        max-inline-size: 36ch;
+        margin-inline-end: auto;
+    }
+
+    &:last-child {
+        margin-inline-end: auto;
     }
 }
 
-.social-media {
-    color: var(--gray-300);
-    justify-content: start;
-    margin-block-end: auto;
+.page-footer .social-media {
+        color: var(--gray-300);
+        justify-content: start;
+        --flex-gap: 1rem;
+        margin-block-end: auto;
 
-    .icon {
-        border: thin solid var(--gray-300);
+        .icon {
+            border: thin solid var(--gray-300);
+        }
     }
-}
 
 
 /* ======================================================================
