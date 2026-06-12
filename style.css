@@ -647,7 +647,7 @@ p {
 }
 
 .card__heading {
-    font-size: var(--fluid-font-size-xl); 
+    font-size: var(--fluid-font-size-l); 
     font-weight: 600;
 }
 
