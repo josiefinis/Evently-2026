@@ -432,6 +432,12 @@ p {
     }
 }
 
+#menu {
+    @media (width > 56rem) {
+        display: none;
+    }
+}
+
 .banner__nav {
     @media (width <= 56rem) {
         display: none;
