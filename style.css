@@ -105,10 +105,10 @@
 }
 
 
-
 /* ==========================================
-    Basic reset & typography
-   ========================================== */
+ *  Basic reset & typography
+ * ========================================== 
+ */
 
 html {
     box-sizing: border-box;
@@ -152,7 +152,7 @@ html {
 }
 
 /* ======================================================================
-/* Global/base styles 
+ * Global/base styles 
  * ======================================================================
  */
 
@@ -329,6 +329,65 @@ p {
     }
 }
 
+.button {
+    background-color: var(--clr-brand);
+    color: var(--white); 
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.25em;
+
+    &:hover {
+        background-color: var(--bg-button-hover);
+        color: contrast-color(var(--bg-button-hover));
+    }
+}
+
+.link {
+    border-radius: 2px;
+    &:focus-visible {
+        outline: 2px solid var(--clr-focus);
+        outline-offset: 4px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-underline-offset: 0.4em;
+    }
+}
+
+.icon {
+    border-radius: 50%;
+    padding: calc(2 * var(--spacing));
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    margin-inline-end: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-l);
+}
+
+.section__header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.section__heading {
+    font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); /* TODO: set max */
+    font-weight: 700;
+}
+
+
+/*          Banner    
+ * ============================ 
+ */
 .banner {
     --flex-gap: 1rem;
     @media (width > 56rem) {
@@ -354,7 +413,15 @@ p {
     }
 }
 
+.banner__search {
+    margin-inline-start: auto;
+}
 
+
+
+/*       Hamburger Menu    
+ * ============================ 
+ */
 #menu {
     /* modifierad från Robert Hedblad (2026) https://codepen.io/robert-lexicon/pen/emgNOJa */
     margin: 0; 
@@ -411,7 +478,6 @@ p {
     }
 }
 
-
 @media (prefers-reduced-motion: reduce) {
     #menu {
         --duration-open: 0s;
@@ -420,56 +486,9 @@ p {
 }
 
 
-.button {
-    background-color: var(--clr-brand);
-    color: var(--white); 
-    padding: 0.5em;
-    border: none;
-    border-radius: 0.25em;
-
-    &:hover {
-        background-color: var(--bg-button-hover);
-        color: contrast-color(var(--bg-button-hover));
-    }
-}
-
-
-.link {
-    border-radius: 2px;
-    &:focus-visible {
-        outline: 2px solid var(--clr-focus);
-        outline-offset: 4px;
-    }
-
-    &:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 3px;
-        text-underline-offset: 0.4em;
-    }
-}
-
-.icon {
-    border-radius: 50%;
-    padding: calc(2 * var(--spacing));
-    aspect-ratio: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    margin-inline-end: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-l);
-}
-
-.banner__search {
-    margin-inline-start: auto;
-}
-
+/*          Hero    
+ * ============================ 
+ */
 .hero {
     grid-template-columns: 1fr;
 }
@@ -509,6 +528,9 @@ p {
     }
 }
 
+/*         Search Event    
+ * ============================ 
+ */
 .search-event {
     padding: 2rem;
 }
@@ -542,15 +564,9 @@ p {
 }
 
 
-.section__header {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.section__heading {
-    font-size: clamp(1.0rem, 3cqi + 0.5rem, 3rem); /* TODO: set max */
-    font-weight: 700;
-}
+/*          Cards    
+ * ============================ 
+ */
 
 .cards-container {
     @media (width > 1000px) {
@@ -635,7 +651,10 @@ p {
 }
 
 
-.main-content__footer { /* TODO: utility class? */
+/*       Main content footer and Badges    
+ * ========================================== 
+ */
+.main-content__footer { 
     background-color: light-dark(var(--mint-50), var(--mint-900)); 
     padding-block: 2rem;
 }
@@ -669,7 +688,6 @@ p {
     }
 }
 
-
 .badge__name {
     font-weight: var(--font-weight-bold);
 }
@@ -679,6 +697,9 @@ p {
 
 }
 
+/*        Page Footer    
+ * ============================ 
+ */
 /* TODO: fluid text sizing! Ideally using variables. */
 /* TODO: fix so that address lines do not wrap. Maybe a different solution for footer with flex would be better?*/
 .page-footer {
@@ -720,8 +741,6 @@ p {
         border: thin solid var(--gray-300);
     }
 }
-
-
 
 
 /* ======================================================================
