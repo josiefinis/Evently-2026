@@ -15,8 +15,8 @@
      */
     --fluid-font-size-xxl: clamp(2.0rem, 8cqi + 0.5rem, 4rem);
     --fluid-font-size-xl: clamp(1.2rem, 2cqi + 0.5rem, 2.5rem);
-    --fluid-font-size-l: clamp(1.0rem, 2cqi + 0.5rem, 2rem);
-    --fluid-font-size-m: clamp(0.8rem, 2cqi + 0.5rem, 1.1rem); 
+    --fluid-font-size-l: clamp(0.9rem, 2.2cqi + 0.5rem, 1.5rem);
+    --fluid-font-size-m: clamp(0.8rem, 2cqi + 0.5rem, 1rem); 
     --fluid-font-size-s: clamp(0.7rem, 1cqi + 0.5rem, 1rem); 
 
     --font-weight-bold: 600;
@@ -651,7 +651,7 @@ p {
 }
 
 .card__heading {
-    font-size: var(--fluid-font-size-xl); 
+    font-size: var(--fluid-font-size-l); 
     font-weight: 600;
 }
 
@@ -665,7 +665,7 @@ p {
 }
 
 .tag {
-    font-size: var(--fluid-font-size-m);
+    font-size: var(--fluid-font-size-s);
     padding-block: var(--spacing);
     padding-inline: calc(3 * var(--spacing));
     border-radius: var(--spacing);
