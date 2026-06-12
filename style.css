@@ -509,6 +509,7 @@ p {
 }
   
 .menu__nav {
+    padding-inline: 4rem;
     ul {
         flex-direction: column;
         align-items: center;
