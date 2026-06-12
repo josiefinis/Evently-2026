@@ -9,6 +9,10 @@
     --static-font-size-m: 1rem; 
     --static-font-size-s: 0.8rem;
 
+    /* TODO: rework fluid font sizes to work well across all screen sizes: 
+     *  - Fix relationship between Populära Evenemang, Hitta rätt... card headings and card tags.
+     *      - Populära > Hitta > card heading > card tag.
+     */
     --fluid-font-size-xxl: clamp(2.0rem, 8cqi + 0.5rem, 4rem);
     --fluid-font-size-xl: clamp(1.2rem, 2cqi + 0.5rem, 2.5rem);
     --fluid-font-size-l: clamp(1.0rem, 2cqi + 0.5rem, 2rem);
@@ -647,7 +651,7 @@ p {
 }
 
 .card__heading {
-    font-size: var(--fluid-font-size-l); 
+    font-size: var(--fluid-font-size-xl); 
     font-weight: 600;
 }
 
