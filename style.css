@@ -546,6 +546,7 @@ p {
 
 .hero__figure {
     grid-template-columns: 1fr 1fr 1fr;
+    --grid-gap: 0.5rem;
     img {
         block-size: 100%;
         inline-size: 100%;
@@ -561,7 +562,6 @@ p {
     .hero__figure {
         height: auto;
         grid-template-columns: 1.6fr 1fr;
-        --grid-gap: 0.5rem;
 
         :first-child {
             grid-row: span 2;
