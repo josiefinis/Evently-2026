@@ -8,8 +8,9 @@
     <!-- Google Fonts Preconnect and Links for Variable Fonts: Inter and Poppins -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-</head>
     <link rel="stylesheet" href="style.css">
+</head>
+
 <body class="flow">
     <a class="skip-link" href="#main">Till innehåll</a>
 
@@ -24,11 +25,13 @@
     </svg>
     -->
 
+    <!-- ====================================================================== -->
     <!-- BANNER -->
-    <!-- ====== -->
+    <!-- ====================================================================== -->
     <header class="banner | content-grid container">
         <div class="full-width">
             <div class="flex">
+                <!-- Logo -->
                 <span class="logo">
                     <!-- logo icon -->
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +42,7 @@
                     <span class="logo__text">Evently</span>
                 </span>
 
-                <!-- TODO: implement hamburger menu with <dialog> -->
+                <!-- Navigation -->
                 <nav class="banner__nav">
                     <ul class="flex">
                         <li><a class="link clr-brand" href="#">Hem</a></li>
@@ -50,8 +53,8 @@
                     </ul>
                 </nav>
 
-                <!-- SEARCH -->
-                <button class="banner__search button" type="button" data-type="icon" aria-label="Sök">
+                <!-- Search site -->
+                <button class="banner__search button" type="button" data-type="icon" aria-label="Sök sidan">
                     <!-- spyglass icon -->
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -60,9 +63,11 @@
                     </svg>
                 </button>
 
+                <!-- Log in -->
                 <button class="banner__login button" type="button">Logga in</button>
 
-                <button id="hamburger" class="banner__hamburger button" type="button" data-type="icon" aria-label="Öppna meny">
+                <!-- Hamburger -->
+                <button class="banner__hamburger button" data-type="icon" type="button" commandfor="menu" command="show-modal" aria-label="Öppna meny">
                     <!-- hamburger icon -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -72,13 +77,42 @@
                     </svg>
                 </button>
 
+                <!-- Dialog menu -->
+                <!-- =========== -->
+                <dialog id="menu" class="menu" closedby="any">
+                    <div class="stack">
+                        <button class="button" data-type="icon" type="button" commandfor="menu" command="close" aria-label="Stäng meny">
+                            <!-- hamburger icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="4" y1="12" x2="20" y2="12"></line>
+                                <line x1="4" y1="6" x2="20" y2="6"></line>
+                                <line x1="4" y1="18" x2="20" y2="18"></line>
+                            </svg>
+                        </button>
+
+                        <nav class="menu__nav">
+                            <ul class="stack">
+                                <li><a class="link clr-brand" href="#">Hem</a></li>
+                                <li><a class="link" href="#">Evenemang</a></li>
+                                <li><a class="link" href="#">Kategorier</a></li>
+                                <li><a class="link" href="#">Om oss</a></li>
+                                <li><a class="link" href="#">Kontakt</a></li>
+                            </ul>
+                        </nav>
+
+                        <button class="button" type="button">Logga in</button>
+                    </div>
+                </dialog>
+
             </div>
         </div>
     </header>
 
 
+    <!-- ====================================================================== -->
     <!-- MAIN CONTENT -->
-    <!-- ============ -->
+    <!-- ====================================================================== -->
     <main id="main" class="flow content-grid">
         <!-- Main Content - Header: Hero -->
         <header class="hero | grid" aria-labelledby="hero__heading"> 
@@ -90,7 +124,6 @@
                 <button class="button" type="button" data-type="secondary">Se helgens tips</button>
             </div>
 
-            <!-- TODO: write alt text for all images. -->
             <figure class="hero__figure | grid container">
                 <img 
                     class="hero__img"
@@ -119,8 +152,9 @@
             </figure>
         </header>
 
+        <!-- ====================================================================== -->
         <!-- Main Content - Section: Search -->
-        <!-- ==================== -->
+        <!-- ====================================================================== -->
         <section class="search-event | full-width flow bg-clr-brand-transparent" aria-labelledby="search">
             <header>
                 <h2 class="search-event__heading" id="search">Hitta rätt evenemang</h2>
@@ -155,8 +189,9 @@
             </form>
         </section>
 
+        <!-- ====================================================================== -->
         <!-- Main Content - Section: Popular events -->
-        <!-- ============================ -->
+        <!-- ====================================================================== -->
         <section class="section | flow" aria-labelledby="section-1">
             <header class="section__header | flex">
                 <h2 class="section__heading" id="section-1">Populära evenemang</h2>
@@ -274,8 +309,9 @@
             </div>
         </section>
 
+        <!-- ====================================================================== -->
         <!-- Main Content - Footer: merit badges -->
-        <!-- ========================= -->
+        <!-- ====================================================================== -->
         <footer class="main-content__footer | full-width"> 
             <div class="badges-container | grid">
 
@@ -338,11 +374,13 @@
         </footer>
     </main>
 
+    <!-- ====================================================================== -->
     <!-- PAGE FOOTER -->
-    <!-- =========== -->
+    <!-- ====================================================================== -->
     <footer class="page-footer | content-grid">
         <div class="full-width">
             <div class="grid">
+                <!-- Evently -->
                 <section class="flow" aria-label="Sociala medier">
                     <h2 id="footer-section-1">
                         <div class="logo">
@@ -403,6 +441,7 @@
                     </ul>
                 </section>
 
+                <!-- Utforska -->
                 <section aria-labelledby="footer-section-2">
                     <h3 id="footer-section-2">Utforska</h3>
                     <ul>
@@ -413,6 +452,7 @@
                     </ul>
                 </section>
 
+                <!-- Om Evently -->
                 <section aria-labelledby="footer-section-3">
                     <h3 id="footer-section-3">Om Evently</h3>
                     <ul>
@@ -423,6 +463,7 @@
                     </ul>
                 </section>
 
+                <!-- Kontakt -->
                 <section class="contact" aria-labelledby="footer-section-4">
                     <h3 id="footer-section-4">Kontakt</h3>
                     <address class="flow">

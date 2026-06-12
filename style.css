@@ -1,4 +1,6 @@
 :root {
+    /* TODO: final check with wave, lighthouse.
+    /* TODO: check over use of variables, define variables for text size etc. */
     /* Fonts */
     --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
     --font-poppins: 'Poppins', system-ui, -apple-system, sans-serif;
@@ -13,7 +15,7 @@
     --font-weight-bolder: 800;
 
 
-    /* TODO: fix oklch colors to be in gamut. */
+    /* TODO: Media query(ies) for wide gamut. */
     /* Brand Colors */
     --purple-100: oklch(95.6% 0.028 282); /* Unavailable on any device */
     --purple-200: oklch(91.7% 0.049 281); /* Unavailable on any device */
@@ -65,7 +67,6 @@
     --blue-800: oklch(45% 0.1828 260); 
 
 
-    /* TODO: fix dark mode colors. */
     /* Semantic Colors */
     
     --dark-purple: oklch(from var(--purple-800) 30% 0.05 h);
@@ -96,6 +97,11 @@
     /* Spacing */
     --spacing: 0.25rem;
 
+    /* Dialog */
+    --duration-open: 0.25s;
+    --duration-close: 0.35s;
+    --surface: --var(--white);
+    --line: var(--gray-400);
 }
 
 
@@ -107,7 +113,7 @@
 html {
     box-sizing: border-box;
 }
-/* Motivation for inheriting box-sizing (Coyier, 2014). Comeau (2026) also mentions. */ 
+
 *,
 *::before,
 *::after {
@@ -153,7 +159,17 @@ html {
 body {
     font-family: var(--font-inter);
     color: light-dark(var(--gray-900), var(--gray-100)); 
+
+    &:has(dialog[open]) {
+        overflow: hidden;
+    }
 }
+
+/* Enable view transitions for modern SPA-like page navigation */
+@view-transition {
+    navigation: auto;
+}
+
 
 h1,
 h2,
@@ -199,35 +215,6 @@ p {
  * ======================================================================
  */
 
-/* Kevin Powell's content-grid layout pattern */
-.content-grid {
-    --padding-inline: calc(var(--spacing) * 6);
-    --content-max-width: 75rem;
-    --breakout-max-width: 85rem;
-
-    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
-
-    display: grid;
-    grid-template-columns:
-        [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] minmax(min(100% - (var(--padding-inline) * 2), var(--content-max-width)), 1fr) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
-}
-
-.content-grid> :not(.breakout, .full-width),
-.full-width> :not(.breakout, .full-width) {
-    grid-column: content;
-}
-
-.content-grid>.breakout {
-    grid-column: breakout;
-}
-
-.content-grid>.full-width {
-    grid-column: full-width;
-
-    display: grid;
-    grid-template-columns: inherit;
-}
-
 .container {
     container-type: inline-size;
 }
@@ -254,6 +241,36 @@ p {
 
 .flow > * + * {
     margin-block-start: var(--flow-space, 1em);
+}
+
+
+/* Kevin Powell's content-grid layout pattern (https://codepen.io/kevinpowell/pen/ExrZrrw) */
+.content-grid {
+    --padding-inline: calc(var(--spacing) * 6);
+    --content-max-width: 75rem;
+    --breakout-max-width: 85rem;
+
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+    display: grid;
+    grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] minmax(min(100% - (var(--padding-inline) * 2), var(--content-max-width)), 1fr) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid> :not(.breakout, .full-width),
+.full-width> :not(.breakout, .full-width) {
+    grid-column: content;
+}
+
+.content-grid>.breakout {
+    grid-column: breakout;
+}
+
+.content-grid>.full-width {
+    grid-column: full-width;
+
+    display: grid;
+    grid-template-columns: inherit;
 }
 
 
@@ -298,6 +315,20 @@ p {
  * ======================================================================
  */
 
+.skip-link {
+    padding: 1.2rem;
+    background-color: var(--clr-focus);
+    color: contrast-color(var(--clr-focus));
+    position: absolute;
+    inset-block-start: -1000px;
+    inline-size: 100%;
+    text-align: center;
+
+    &:focus {
+        inset-block-start: 0px;
+    }
+}
+
 .banner {
     --flex-gap: 1rem;
     @media (width > 56rem) {
@@ -323,19 +354,71 @@ p {
     }
 }
 
-.skip-link {
-    padding: 1.2rem;
-    background-color: var(--clr-focus);
-    color: contrast-color(var(--clr-focus));
-    position: absolute;
-    inset-block-start: -1000px;
-    inline-size: 100%;
-    text-align: center;
 
-    &:focus {
-        inset-block-start: 0px;
+#menu {
+    /* modifierad från Robert Hedblad (2026) https://codepen.io/robert-lexicon/pen/emgNOJa */
+    margin: 0; 
+    inset: 0 0 0 auto; /* Snaps drawer right up against the right side */
+    width: 100%;
+    max-width: max-content;
+    height: 100dvh;
+    max-height: 100%;
+    border: 0; 
+    border-left: 1px solid var(--line);
+    box-shadow: 200px 0 0 0 var(--surface); 
+    padding-inline: 0;
+
+    /* --- Structural Transitions & State Rules --- */
+    translate: 100% 0; /* Hidden default state */
+  
+    /* The closing animation */
+    transition: translate var(--duration-close) ease-in,
+        display var(--duration-close) allow-discrete,
+        overlay var(--duration-close) allow-discrete;
+  
+    /* --- Open State Dynamics --- */
+    &[open] {
+        translate: 0 0; /* Slides into view */
+  
+        /* Open faster than closing */
+        transition: translate var(--duration-open) ease-out,
+            display var(--duration-open) allow-discrete,
+            overlay var(--duration-open) allow-discrete;
+  
+        @starting-style {
+            translate: 100% 0; /* Entry point animation baseline */
+        }
     }
 }
+
+.menu>.stack {
+    padding-inline: calc(6* var(--spacing));
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    height: 100%;
+
+    :last-child {
+        margin-block-start: auto;
+        align-self: center;
+    }
+}
+  
+.menu__nav {
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    #menu {
+        --duration-open: 0s;
+        --duration-close: 0s;
+    }
+}
+
 
 .button {
     background-color: var(--clr-brand);
@@ -596,7 +679,8 @@ p {
 
 }
 
-/* TODO: fix so that address lines do not wrap. Maybe a different solution for footer with flex would be better? */
+/* TODO: fluid text sizing! Ideally using variables. */
+/* TODO: fix so that address lines do not wrap. Maybe a different solution for footer with flex would be better?*/
 .page-footer {
     margin: 0;
     --grid-gap: 2rem;
